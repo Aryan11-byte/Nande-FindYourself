@@ -1,2112 +1,1003 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <title>NANDÉ — FIND YOURSELF.</title>
 
-    <meta
-        name="description"
-        content="NANDÉ — Find Yourself. A new expression of luxury beauty."
-    >
+    <meta name="description"
+        content="NANDÉ — A modern luxury beauty house. Thoughtfully created beauty, designed to become part of you.">
 
-    <title>NANDÉ | FIND YOURSELF</title>
-
-
-    <!-- GOOGLE FONTS -->
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
-
+    <meta name="theme-color" content="#f5f1e8">
 
     <style>
-
-        /* =========================================
-           GLOBAL
-        ========================================= */
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-
         html {
             scroll-behavior: smooth;
         }
 
-
         body {
-            font-family: "Inter", sans-serif;
-            background: #f8f6f1;
+            background: #f5f1e8;
             color: #171512;
-            line-height: 1.6;
+            font-family: Arial, Helvetica, sans-serif;
+            overflow-x: hidden;
         }
-
 
         a {
-            text-decoration: none;
             color: inherit;
+            text-decoration: none;
         }
 
-
-        button,
-        input {
-            font-family: inherit;
-        }
-
-
-        /* =========================================
-           NAVBAR
-        ========================================= */
+        /* =========================
+           HEADER
+        ========================= */
 
         header {
+            width: 100%;
+            height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 6%;
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
             z-index: 100;
+            border-bottom: 1px solid rgba(23, 21, 18, 0.10);
         }
-
-
-        .navbar {
-            max-width: 1400px;
-            margin: auto;
-
-            padding: 28px 50px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
 
         .logo {
-            font-family: "Playfair Display", serif;
-            font-size: 32px;
-            letter-spacing: 4px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 29px;
+            letter-spacing: 7px;
+            font-weight: normal;
         }
 
-
-        .nav-links {
+        nav {
             display: flex;
-            gap: 38px;
-            list-style: none;
-
-            font-size: 13px;
-            letter-spacing: 1px;
+            align-items: center;
+            gap: 34px;
+            font-size: 11px;
+            letter-spacing: 2px;
             text-transform: uppercase;
         }
 
-
-        .nav-links a {
-            transition: opacity 0.3s;
+        nav a {
+            position: relative;
+            opacity: 0.82;
+            transition: 0.3s ease;
         }
 
-
-        .nav-links a:hover {
-            opacity: 0.5;
+        nav a:hover {
+            opacity: 1;
         }
 
-
-        .nav-buttons {
-            display: flex;
-            gap: 15px;
-            align-items: center;
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -7px;
+            width: 0;
+            height: 1px;
+            background: #171512;
+            transition: width 0.3s ease;
         }
 
-
-        .login-btn,
-        .cart-btn {
-            font-size: 13px;
-            letter-spacing: 1px;
+        nav a:hover::after {
+            width: 100%;
         }
 
+        .menu-button {
+            display: none;
+            border: none;
+            background: none;
+            font-size: 22px;
+            cursor: pointer;
+        }
 
-        /* =========================================
+        /* =========================
            HERO
-        ========================================= */
+        ========================= */
 
         .hero {
             min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding-top: 82px;
+        }
 
+        .hero-left {
             display: flex;
             align-items: center;
-            justify-content: center;
-
-            text-align: center;
-
-            padding: 150px 25px 100px;
-
-            background:
-                radial-gradient(
-                    circle at 50% 30%,
-                    #ffffff 0%,
-                    #f8f6f1 50%,
-                    #eeeae2 100%
-                );
-
-            position: relative;
-            overflow: hidden;
+            padding: 8% 10%;
         }
-
 
         .hero-content {
-            max-width: 900px;
-            margin: auto;
+            max-width: 560px;
         }
-
 
         .eyebrow {
-            font-size: 11px;
-            letter-spacing: 5px;
+            font-size: 10px;
+            letter-spacing: 4px;
             text-transform: uppercase;
-
-            margin-bottom: 25px;
-
-            color: #777066;
+            margin-bottom: 28px;
+            opacity: 0.65;
         }
-
 
         .hero h1 {
-            font-family: "Playfair Display", serif;
-
-            font-size: clamp(70px, 11vw, 150px);
-
-            font-weight: 400;
-
-            line-height: 0.9;
-
-            letter-spacing: -4px;
-
-            margin-bottom: 35px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-weight: normal;
+            font-size: clamp(62px, 8vw, 125px);
+            line-height: 0.88;
+            letter-spacing: -5px;
+            margin-bottom: 34px;
         }
 
-
-        .hero-tagline {
-            font-size: 18px;
-
-            letter-spacing: 5px;
-
-            text-transform: uppercase;
-
-            margin-bottom: 25px;
+        .hero h1 span {
+            display: block;
+            font-style: italic;
+            margin-left: 42px;
         }
-
 
         .hero-description {
-            max-width: 600px;
-
-            margin: auto;
-
-            color: #6f6a61;
-
-            font-size: 15px;
-
+            max-width: 390px;
+            font-size: 14px;
             line-height: 1.9;
+            color: #625d54;
+            margin-bottom: 38px;
         }
-
 
         .hero-buttons {
-            margin-top: 40px;
-
             display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-
-        .btn-primary {
-            background: #171512;
-            color: white;
-
-            padding: 16px 32px;
-
-            border: none;
-
-            cursor: pointer;
-
-            letter-spacing: 2px;
-
-            font-size: 12px;
-
-            text-transform: uppercase;
-
-            transition: 0.3s;
-        }
-
-
-        .btn-primary:hover {
-            background: #3c3832;
-            transform: translateY(-2px);
-        }
-
-
-        .btn-secondary {
-            border: 1px solid #171512;
-
-            padding: 15px 32px;
-
-            font-size: 12px;
-
-            letter-spacing: 2px;
-
-            text-transform: uppercase;
-
-            transition: 0.3s;
-        }
-
-
-        .btn-secondary:hover {
-            background: #171512;
-            color: white;
-        }
-
-
-        /* =========================================
-           COUNTDOWN
-        ========================================= */
-
-        .launch-section {
-            padding: 100px 25px;
-
-            text-align: center;
-
-            background: #171512;
-
-            color: white;
-        }
-
-
-        .launch-label {
-            font-size: 11px;
-
-            letter-spacing: 5px;
-
-            text-transform: uppercase;
-
-            color: #bdb7ac;
-
-            margin-bottom: 20px;
-        }
-
-
-        .launch-section h2 {
-            font-family: "Playfair Display", serif;
-
-            font-size: clamp(40px, 6vw, 70px);
-
-            font-weight: 400;
-
-            margin-bottom: 15px;
-        }
-
-
-        .launch-description {
-            color: #aaa49b;
-
-            max-width: 550px;
-
-            margin: auto;
-
-            font-size: 14px;
-        }
-
-
-        .countdown {
-            display: flex;
-
-            justify-content: center;
-
-            gap: 15px;
-
-            margin: 55px auto 35px;
-
+            gap: 12px;
             flex-wrap: wrap;
         }
 
-
-        .countdown-box {
-            width: 120px;
-
-            padding: 25px 15px;
-
-            border: 1px solid rgba(255,255,255,0.2);
-
-            background: rgba(255,255,255,0.03);
-        }
-
-
-        .countdown-number {
-            font-family: "Playfair Display", serif;
-
-            font-size: 45px;
-
-            font-weight: 400;
-
-            line-height: 1;
-        }
-
-
-        .countdown-label {
-            margin-top: 10px;
-
-            font-size: 10px;
-
-            letter-spacing: 3px;
-
-            text-transform: uppercase;
-
-            color: #aaa49b;
-        }
-
-
-        .launch-date {
-            font-size: 11px;
-
-            letter-spacing: 3px;
-
-            color: #bdb7ac;
-        }
-
-
-        /* =========================================
-           WAITING LIST
-        ========================================= */
-
-        .waiting-section {
-            padding: 110px 25px;
-
-            text-align: center;
-
-            background: #eeeae2;
-        }
-
-
-        .waiting-section h2 {
-            font-family: "Playfair Display", serif;
-
-            font-size: clamp(42px, 6vw, 68px);
-
-            font-weight: 400;
-
-            margin-bottom: 20px;
-        }
-
-
-        .waiting-section p {
-            max-width: 550px;
-
-            margin: auto;
-
-            color: #716b62;
-
-            font-size: 14px;
-        }
-
-
-        .waiting-form {
-            max-width: 520px;
-
-            margin: 35px auto 0;
-
-            display: flex;
-
-            border-bottom: 1px solid #171512;
-        }
-
-
-        .waiting-form input {
-            flex: 1;
-
-            border: none;
-
-            background: transparent;
-
-            padding: 16px 5px;
-
-            outline: none;
-
-            font-size: 14px;
-        }
-
-
-        .waiting-form button {
-            border: none;
-
-            background: transparent;
-
-            cursor: pointer;
-
-            padding: 15px 5px;
-
-            font-size: 11px;
-
-            letter-spacing: 2px;
-
-            text-transform: uppercase;
-
-            font-weight: 600;
-        }
-
-
-        .form-message {
-            margin-top: 18px;
-
-            font-size: 12px;
-
-            color: #5f5a52;
-
-            min-height: 20px;
-        }
-
-
-        /* =========================================
-           PRODUCT
-        ========================================= */
-
-        .product-section {
-            padding: 120px 25px;
-
-            max-width: 1300px;
-
-            margin: auto;
-        }
-
-
-        .section-heading {
-            text-align: center;
-
-            margin-bottom: 70px;
-        }
-
-
-        .section-heading span {
-            font-size: 10px;
-
-            letter-spacing: 4px;
-
-            text-transform: uppercase;
-
-            color: #817a70;
-        }
-
-
-        .section-heading h2 {
-            font-family: "Playfair Display", serif;
-
-            font-size: clamp(45px, 6vw, 70px);
-
-            font-weight: 400;
-
-            margin-top: 15px;
-        }
-
-
-        .product-layout {
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 80px;
-
+        .button {
+            display: inline-flex;
             align-items: center;
-        }
-
-
-        .product-image {
-            min-height: 650px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #e5e0d7,
-                    #f9f7f2
-                );
-
-            display: flex;
-
-            align-items: center;
-
             justify-content: center;
+            min-height: 50px;
+            padding: 0 28px;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 1px solid #171512;
+            transition: all 0.3s ease;
+        }
 
+        .button-dark {
+            background: #171512;
+            color: #f5f1e8;
+        }
+
+        .button-dark:hover {
+            background: transparent;
+            color: #171512;
+        }
+
+        .button-light:hover {
+            background: #171512;
+            color: #f5f1e8;
+        }
+
+        /* =========================
+           HERO VISUAL
+        ========================= */
+
+        .hero-right {
+            min-height: calc(100vh - 82px);
+            background: #e8e0d2;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-circle {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border: 1px solid rgba(23, 21, 18, 0.12);
+            border-radius: 50%;
+        }
+
+        .hero-circle::before {
+            content: "";
+            position: absolute;
+            inset: 50px;
+            border: 1px solid rgba(23, 21, 18, 0.08);
+            border-radius: 50%;
+        }
+
+        .product-display {
+            position: relative;
+            z-index: 2;
+            width: 250px;
+            min-height: 380px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-bottle {
+            width: 125px;
+            height: 220px;
+            border: 1px solid #8c8170;
+            border-radius: 18px 18px 28px 28px;
+            background: linear-gradient(
+                145deg,
+                #faf8f2,
+                #e4dccd
+            );
+            box-shadow:
+                25px 30px 50px rgba(55, 46, 35, 0.16),
+                inset -10px -10px 25px rgba(120, 100, 70, 0.08);
             position: relative;
         }
 
+        .product-bottle::before {
+            content: "";
+            position: absolute;
+            width: 52px;
+            height: 32px;
+            background: #191714;
+            top: -31px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 4px 4px 2px 2px;
+        }
 
-        .product-placeholder {
-            width: 230px;
-
-            height: 430px;
-
-            border-radius: 15px;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    #181715,
-                    #36332e,
-                    #151412
-                );
-
-            box-shadow:
-                20px 30px 60px rgba(0,0,0,0.25);
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            color: white;
-
+        .product-label {
+            position: absolute;
+            left: 12px;
+            right: 12px;
+            top: 75px;
+            padding: 17px 5px;
+            border-top: 1px solid rgba(23, 21, 18, 0.18);
+            border-bottom: 1px solid rgba(23, 21, 18, 0.18);
             text-align: center;
-
-            padding: 30px;
         }
 
-
-        .product-placeholder-inner {
-            border: 1px solid rgba(255,255,255,0.5);
-
-            width: 80%;
-
-            height: 85%;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            flex-direction: column;
+        .product-label strong {
+            display: block;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 17px;
+            font-weight: normal;
+            letter-spacing: 4px;
         }
 
+        .product-label small {
+            display: block;
+            font-size: 6px;
+            letter-spacing: 2px;
+            margin-top: 8px;
+        }
 
-        .product-placeholder-name {
-            font-family: "Playfair Display", serif;
+        .visual-caption {
+            margin-top: 40px;
+            text-align: center;
+        }
 
-            font-size: 30px;
+        .visual-caption p:first-child {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 23px;
+        }
 
+        .visual-caption p:last-child {
+            margin-top: 8px;
+            font-size: 9px;
             letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.55;
         }
 
+        /* =========================
+           INTRO
+        ========================= */
 
-        .product-placeholder-sub {
-            margin-top: 15px;
-
-            font-size: 8px;
-
-            letter-spacing: 3px;
+        .intro {
+            padding: 150px 8%;
+            text-align: center;
+            background: #f5f1e8;
         }
 
-
-        .product-info .eyebrow {
-            margin-bottom: 15px;
-        }
-
-
-        .product-info h2 {
-            font-family: "Playfair Display", serif;
-
-            font-size: 55px;
-
-            font-weight: 400;
-
-            line-height: 1.1;
-
-            margin-bottom: 20px;
-        }
-
-
-        .product-info p {
-            color: #706b62;
-
-            font-size: 15px;
-
-            line-height: 1.9;
-
+        .section-label {
+            font-size: 9px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            opacity: 0.55;
             margin-bottom: 25px;
         }
 
-
-        .price {
-            font-family: "Playfair Display", serif;
-
-            font-size: 28px;
-
-            margin-bottom: 30px;
-        }
-
-
-        .product-details {
-            border-top: 1px solid #d5d0c8;
-
-            border-bottom: 1px solid #d5d0c8;
-
-            padding: 20px 0;
-
-            margin-bottom: 30px;
-        }
-
-
-        .product-detail {
-            display: flex;
-
-            justify-content: space-between;
-
-            padding: 7px 0;
-
-            font-size: 12px;
-        }
-
-
-        .product-detail span:last-child {
-            color: #777066;
-        }
-
-
-        /* =========================================
-           BRAND STORY
-        ========================================= */
-
-        .story-section {
-            background: #171512;
-
-            color: white;
-
-            padding: 130px 25px;
-
-            text-align: center;
-        }
-
-
-        .story-inner {
+        .intro h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-weight: normal;
+            font-size: clamp(40px, 6vw, 76px);
+            line-height: 1.05;
             max-width: 850px;
-
             margin: auto;
         }
 
-
-        .story-section span {
-            font-size: 10px;
-
-            letter-spacing: 5px;
-
-            color: #aaa49b;
+        .intro h2 em {
+            font-style: italic;
         }
 
-
-        .story-section h2 {
-            font-family: "Playfair Display", serif;
-
-            font-size: clamp(45px, 7vw, 80px);
-
-            font-weight: 400;
-
-            margin: 25px 0;
-        }
-
-
-        .story-section p {
-            color: #aaa49b;
-
-            font-size: 16px;
-
-            line-height: 2;
-
-            margin-bottom: 20px;
-        }
-
-
-        .find-yourself {
-            margin-top: 50px;
-
-            font-size: 13px !important;
-
-            letter-spacing: 7px;
-
-            color: white !important;
-        }
-
-
-        /* =========================================
-           VALUES
-        ========================================= */
-
-        .values-section {
-            padding: 120px 25px;
-
-            max-width: 1200px;
-
-            margin: auto;
-        }
-
-
-        .values-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 25px;
-        }
-
-
-        .value-card {
-            padding: 45px 30px;
-
-            border-top: 1px solid #cfc9bf;
-        }
-
-
-        .value-number {
-            font-size: 11px;
-
-            letter-spacing: 3px;
-
-            color: #8a8379;
-        }
-
-
-        .value-card h3 {
-            font-family: "Playfair Display", serif;
-
-            font-size: 27px;
-
-            font-weight: 400;
-
-            margin: 25px 0 15px;
-        }
-
-
-        .value-card p {
-            font-size: 13px;
-
-            color: #716b62;
-
+        .intro p {
+            max-width: 550px;
+            margin: 30px auto 0;
+            color: #686258;
+            font-size: 14px;
             line-height: 1.9;
         }
 
+        /* =========================
+           PRODUCT SECTION
+        ========================= */
 
-        /* =========================================
-           FINAL CTA
-        ========================================= */
+        .product-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 700px;
+            background: #e9e2d6;
+        }
 
-        .final-section {
-            padding: 140px 25px;
+        .product-image-area {
+            min-height: 650px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
 
+        .large-product {
+            width: 190px;
+            height: 330px;
+            border: 1px solid #8d8170;
+            border-radius: 25px 25px 40px 40px;
+            background: linear-gradient(
+                145deg,
+                #fbf9f3,
+                #ded4c2
+            );
+            box-shadow: 35px 40px 70px rgba(45, 37, 27, 0.18);
+            position: relative;
+        }
+
+        .large-product::before {
+            content: "";
+            position: absolute;
+            width: 80px;
+            height: 46px;
+            top: -45px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #181714;
+            border-radius: 5px 5px 2px 2px;
+        }
+
+        .large-product-label {
+            position: absolute;
+            top: 105px;
+            left: 17px;
+            right: 17px;
             text-align: center;
-
-            background: #eeeae2;
+            border-top: 1px solid rgba(23, 21, 18, 0.18);
+            border-bottom: 1px solid rgba(23, 21, 18, 0.18);
+            padding: 25px 5px;
         }
 
-
-        .final-section h2 {
-            font-family: "Playfair Display", serif;
-
-            font-size: clamp(50px, 8vw, 100px);
-
-            font-weight: 400;
-
-            line-height: 1;
+        .large-product-label div:first-child {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 25px;
+            letter-spacing: 5px;
         }
 
+        .large-product-label div:nth-child(2) {
+            font-size: 9px;
+            letter-spacing: 3px;
+            margin-top: 12px;
+        }
 
-        .final-section p {
-            margin: 25px auto 35px;
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 12%;
+        }
 
-            max-width: 500px;
+        .product-info h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-weight: normal;
+            font-size: clamp(45px, 5vw, 70px);
+            line-height: 0.95;
+            margin-bottom: 25px;
+        }
 
-            color: #716b62;
+        .product-info h2 em {
+            font-style: italic;
+        }
 
+        .product-status {
+            display: inline-block;
+            width: fit-content;
+            border: 1px solid rgba(23, 21, 18, 0.25);
+            padding: 9px 13px;
+            font-size: 8px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .product-info p {
+            max-width: 430px;
             font-size: 14px;
+            line-height: 1.9;
+            color: #635d54;
+            margin-bottom: 35px;
         }
 
+        /* =========================
+           BRAND STATEMENT
+        ========================= */
 
-        /* =========================================
+        .statement {
+            padding: 160px 8%;
+            background: #171512;
+            color: #f5f1e8;
+            text-align: center;
+        }
+
+        .statement .section-label {
+            opacity: 0.5;
+        }
+
+        .statement h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-weight: normal;
+            font-size: clamp(48px, 7vw, 100px);
+            line-height: 0.95;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .statement h2 em {
+            font-style: italic;
+        }
+
+        .statement p {
+            max-width: 520px;
+            margin: 35px auto 0;
+            font-size: 13px;
+            line-height: 1.9;
+            opacity: 0.65;
+        }
+
+        /* =========================
+           WAITLIST
+        ========================= */
+
+        .waitlist {
+            padding: 130px 8%;
+            text-align: center;
+            background: #f5f1e8;
+        }
+
+        .waitlist h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-weight: normal;
+            font-size: clamp(42px, 5vw, 65px);
+            margin-bottom: 18px;
+        }
+
+        .waitlist p {
+            max-width: 500px;
+            margin: auto;
+            color: #686258;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .waitlist-buttons {
+            margin-top: 35px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        /* =========================
            FOOTER
-        ========================================= */
+        ========================= */
 
         footer {
-            background: #11100e;
-
-            color: white;
-
-            padding: 70px 50px 0;
+            background: #e8e0d2;
+            border-top: 1px solid rgba(23, 21, 18, 0.12);
+            padding: 55px 6% 30px;
         }
 
-
-        .footer-container {
-            max-width: 1300px;
-
-            margin: auto;
-
-            display: grid;
-
-            grid-template-columns:
-                2fr 1fr 1fr 1fr;
-
-            gap: 50px;
-
-            padding-bottom: 60px;
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            padding-bottom: 50px;
         }
 
+        .footer-logo {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 27px;
+            letter-spacing: 6px;
+        }
 
-        .footer-container h2 {
-            font-family: "Playfair Display", serif;
-
-            font-size: 30px;
-
+        .footer-tagline {
+            margin-top: 12px;
+            font-size: 9px;
             letter-spacing: 3px;
-        }
-
-
-        .footer-container h3 {
-            font-size: 11px;
-
-            letter-spacing: 3px;
-
             text-transform: uppercase;
-
-            margin-bottom: 20px;
+            opacity: 0.55;
         }
 
-
-        .footer-container p,
-        .footer-container li {
-            color: #969087;
-
-            font-size: 12px;
-
-            margin-bottom: 10px;
+        .footer-links {
+            display: flex;
+            gap: 50px;
         }
 
-
-        .footer-container ul {
-            list-style: none;
+        .footer-column h4 {
+            font-size: 9px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+            font-weight: normal;
         }
 
-
-        .footer-container a:hover {
-            color: white;
-        }
-
-
-        .footer-bottom {
-            border-top: 1px solid #292722;
-
-            text-align: center;
-
-            padding: 25px;
-
-            color: #777168;
-
+        .footer-column a {
+            display: block;
             font-size: 11px;
+            margin-bottom: 10px;
+            opacity: 0.65;
+        }
 
+        .footer-column a:hover {
+            opacity: 1;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(23, 21, 18, 0.12);
+            padding-top: 25px;
+            font-size: 9px;
             letter-spacing: 1px;
+            opacity: 0.5;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
         }
 
+        /* =========================
+           MOBILE
+        ========================= */
 
-        /* =========================================
-           RESPONSIVE
-        ========================================= */
+        @media (max-width: 800px) {
 
-        @media(max-width: 900px) {
+            header {
+                height: 70px;
+                padding: 0 6%;
+            }
 
-            .nav-links {
+            .logo {
+                font-size: 24px;
+                letter-spacing: 5px;
+            }
+
+            nav {
                 display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: #f5f1e8;
+                padding: 25px 6%;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 22px;
+                border-bottom: 1px solid rgba(23, 21, 18, 0.12);
             }
 
-
-            .navbar {
-                padding: 22px 25px;
+            nav.active {
+                display: flex;
             }
 
-
-            .product-layout {
-                grid-template-columns: 1fr;
-
-                gap: 50px;
+            .menu-button {
+                display: block;
             }
-
-
-            .product-image {
-                min-height: 500px;
-            }
-
-
-            .values-grid {
-                grid-template-columns: 1fr;
-            }
-
-
-            .footer-container {
-                grid-template-columns: 1fr 1fr;
-            }
-
-        }
-
-
-        @media(max-width: 600px) {
 
             .hero {
-                padding-top: 130px;
+                grid-template-columns: 1fr;
+                padding-top: 70px;
             }
 
+            .hero-left {
+                min-height: 620px;
+                padding: 70px 8%;
+            }
 
             .hero h1 {
-                letter-spacing: -2px;
+                font-size: clamp(60px, 19vw, 95px);
+                letter-spacing: -4px;
             }
 
-
-            .hero-buttons {
-                flex-direction: column;
-
-                max-width: 280px;
-
-                margin-left: auto;
-
-                margin-right: auto;
+            .hero h1 span {
+                margin-left: 25px;
             }
 
-
-            .countdown-box {
-                width: 75px;
-
-                padding: 18px 8px;
+            .hero-right {
+                min-height: 600px;
             }
 
-
-            .countdown-number {
-                font-size: 30px;
+            .hero-circle {
+                width: 390px;
+                height: 390px;
             }
 
-
-            .countdown-label {
-                font-size: 8px;
-
-                letter-spacing: 1px;
+            .intro {
+                padding: 100px 8%;
             }
 
-
-            .waiting-form {
-                display: block;
-
-                border-bottom: none;
-            }
-
-
-            .waiting-form input {
-                width: 100%;
-
-                border-bottom: 1px solid #171512;
-
-                margin-bottom: 15px;
-            }
-
-
-            .waiting-form button {
-                background: #171512;
-
-                color: white;
-
-                width: 100%;
-
-                padding: 16px;
-            }
-
-
-            .product-image {
-                min-height: 450px;
-            }
-
-
-            .product-placeholder {
-                width: 180px;
-
-                height: 340px;
-            }
-
-
-            .product-info h2 {
-                font-size: 43px;
-            }
-
-
-            .footer-container {
+            .product-section {
                 grid-template-columns: 1fr;
+            }
 
+            .product-image-area {
+                min-height: 550px;
+            }
+
+            .product-info {
+                padding: 80px 8%;
+            }
+
+            .statement {
+                padding: 110px 8%;
+            }
+
+            .waitlist {
+                padding: 100px 8%;
+            }
+
+            .footer-top {
+                flex-direction: column;
+            }
+
+            .footer-links {
                 gap: 35px;
             }
 
+            .copyright {
+                flex-direction: column;
+            }
         }
-
     </style>
-
 </head>
-
 
 <body>
 
+    <!-- =========================
+         HEADER
+    ========================= -->
 
-<!-- =========================================
-     NAVBAR
-========================================= -->
+    <header>
 
-<header>
-
-    <nav class="navbar">
-
-        <div class="logo">
-            <a href="index.html">NANDÉ</a>
-        </div>
-
-
-        <ul class="nav-links">
-
-            <li>
-                <a href="#home">Home</a>
-            </li>
-
-            <li>
-                <a href="#product">The First Creation</a>
-            </li>
-
-            <li>
-                <a href="#story">Our Story</a>
-            </li>
-
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
-
-        </ul>
-
-
-        <div class="nav-buttons">
-
-            <a
-                href="login.html"
-                class="login-btn"
-            >
-                Login
-            </a>
-
-            <a
-                href="cart.html"
-                class="cart-btn"
-            >
-                🛒 Cart
-            </a>
-
-        </div>
-
-    </nav>
-
-</header>
-
-
-
-<!-- =========================================
-     HERO
-========================================= -->
-
-<section
-    class="hero"
-    id="home"
->
-
-    <div class="hero-content">
-
-        <div class="eyebrow">
-            A New Expression Of Beauty
-        </div>
-
-
-        <h1>
+        <a href="index.html" class="logo">
             NANDÉ
-        </h1>
-
-
-        <div class="hero-tagline">
-            FIND YOURSELF
-        </div>
-
-
-        <p class="hero-description">
-
-            A new chapter in luxury beauty is about to begin.
-
-            Meet the first creation from NANDÉ —
-            created for those who believe beauty is not
-            about becoming someone else.
-
-            It's about discovering yourself.
-
-        </p>
-
-
-        <div class="hero-buttons">
-
-            <a
-                href="#launch"
-                class="btn-primary"
-            >
-                Discover The Launch
-            </a>
-
-
-            <a
-                href="#waiting"
-                class="btn-secondary"
-            >
-                Join The Waiting List
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================
-     GRAND LAUNCH COUNTDOWN
-========================================= -->
-
-<section
-    class="launch-section"
-    id="launch"
->
-
-    <div class="launch-label">
-        The Countdown Begins
-    </div>
-
-
-    <h2>
-        Something Beautiful Is Coming.
-    </h2>
-
-
-    <p class="launch-description">
-
-        Our first creation is almost ready.
-
-        Be among the first to experience NANDÉ.
-
-    </p>
-
-
-    <div class="countdown">
-
-        <div class="countdown-box">
-
-            <div
-                id="days"
-                class="countdown-number"
-            >
-                30
-            </div>
-
-            <div class="countdown-label">
-                Days
-            </div>
-
-        </div>
-
-
-        <div class="countdown-box">
-
-            <div
-                id="hours"
-                class="countdown-number"
-            >
-                00
-            </div>
-
-            <div class="countdown-label">
-                Hours
-            </div>
-
-        </div>
-
-
-        <div class="countdown-box">
-
-            <div
-                id="minutes"
-                class="countdown-number"
-            >
-                00
-            </div>
-
-            <div class="countdown-label">
-                Minutes
-            </div>
-
-        </div>
-
-
-        <div class="countdown-box">
-
-            <div
-                id="seconds"
-                class="countdown-number"
-            >
-                00
-            </div>
-
-            <div class="countdown-label">
-                Seconds
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div
-        id="launchDate"
-        class="launch-date"
-    >
-        LAUNCHING SOON
-    </div>
-
-</section>
-
-
-
-<!-- =========================================
-     WAITING LIST
-========================================= -->
-
-<section
-    class="waiting-section"
-    id="waiting"
->
-
-    <div class="launch-label">
-        Early Access
-    </div>
-
-
-    <h2>
-        Be First.
-    </h2>
-
-
-    <p>
-
-        Join the NANDÉ waiting list and receive
-        early access to our first creation,
-        launch updates and exclusive surprises.
-
-    </p>
-
-
-    <form
-        class="waiting-form"
-        id="waitingForm"
-    >
-
-        <input
-            type="email"
-            id="email"
-            placeholder="Your email address"
-            required
-        >
-
-
-        <button type="submit">
-
-            Join The List →
-
+        </a>
+
+        <nav id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="shop.html">The Product</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="track.html">Track Order</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+
+        <button class="menu-button" onclick="toggleMenu()">
+            ☰
         </button>
 
-    </form>
+    </header>
 
 
-    <div
-        id="formMessage"
-        class="form-message"
-    ></div>
+    <!-- =========================
+         HERO
+    ========================= -->
 
-</section>
+    <main>
 
+        <section class="hero">
 
+            <div class="hero-left">
 
-<!-- =========================================
-     FIRST CREATION
-========================================= -->
+                <div class="hero-content">
 
-<section
-    class="product-section"
-    id="product"
->
-
-    <div class="section-heading">
-
-        <span>
-            The First Creation
-        </span>
-
-
-        <h2>
-            One Product.<br>
-            One Beginning.
-        </h2>
-
-    </div>
-
-
-    <div class="product-layout">
-
-
-        <!-- PRODUCT VISUAL -->
-
-        <div class="product-image">
-
-            <div class="product-placeholder">
-
-                <div class="product-placeholder-inner">
-
-                    <div class="product-placeholder-name">
-                        NANDÉ
+                    <div class="eyebrow">
+                        A New Beauty House
                     </div>
 
+                    <h1>
+                        FIND
+                        <span>YOURSELF.</span>
+                    </h1>
 
-                    <div class="product-placeholder-sub">
-                        FIND YOURSELF
+                    <p class="hero-description">
+                        NANDÉ is a modern beauty house created around
+                        one simple idea — beauty should feel personal,
+                        effortless and entirely your own.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="shop.html" class="button button-dark">
+                            Discover NANDÉ
+                        </a>
+
+                        <a href="#story" class="button button-light">
+                            Our Story
+                        </a>
+
                     </div>
 
                 </div>
 
             </div>
 
-        </div>
 
+            <div class="hero-right">
 
+                <div class="hero-circle"></div>
 
-        <!-- PRODUCT INFORMATION -->
+                <div class="product-display">
 
-        <div class="product-info">
+                    <div class="product-bottle">
 
-            <div class="eyebrow">
-                NANDÉ • 001
+                        <div class="product-label">
+                            <strong>NANDÉ</strong>
+                            <small>BEAUTY</small>
+                        </div>
+
+                    </div>
+
+                    <div class="visual-caption">
+
+                        <p>The First Object</p>
+
+                        <p>Coming Soon</p>
+
+                    </div>
+
+                </div>
+
             </div>
 
+        </section>
+
+
+        <!-- =========================
+             INTRO
+        ========================= -->
+
+        <section class="intro" id="story">
+
+            <div class="section-label">
+                The Philosophy
+            </div>
 
             <h2>
-                The First Creation
+                Beauty isn't about becoming someone else.
+                It's about becoming <em>yourself.</em>
             </h2>
 
-
             <p>
-
-                A signature beauty creation designed
-                to become the beginning of your
-                NANDÉ ritual.
-
+                NANDÉ was created to explore a quieter kind of luxury —
+                products that feel considered, timeless and personal.
+                No excess. No unnecessary noise. Just beauty, refined.
             </p>
 
-
-            <p>
-
-                Refined. Minimal. Intentional.
-
-                Created with the philosophy that
-                luxury doesn't need to shout.
-
-            </p>
+        </section>
 
 
-            <div class="price">
-                Launching Soon
-            </div>
+        <!-- =========================
+             FIRST PRODUCT
+        ========================= -->
 
+        <section class="product-section">
 
-            <div class="product-details">
+            <div class="product-image-area">
 
-                <div class="product-detail">
+                <div class="large-product">
 
-                    <span>
-                        Collection
-                    </span>
+                    <div class="large-product-label">
 
-                    <span>
-                        NANDÉ 001
-                    </span>
+                        <div>NANDÉ</div>
 
-                </div>
+                        <div>
+                            FIRST OBJECT
+                        </div>
 
-
-                <div class="product-detail">
-
-                    <span>
-                        Availability
-                    </span>
-
-                    <span>
-                        Limited Launch
-                    </span>
-
-                </div>
-
-
-                <div class="product-detail">
-
-                    <span>
-                        Launch
-                    </span>
-
-                    <span>
-                        September 2026
-                    </span>
+                    </div>
 
                 </div>
 
             </div>
 
 
-            <a
-                href="#waiting"
-                class="btn-primary"
-            >
-                Get Early Access
-            </a>
+            <div class="product-info">
 
-        </div>
+                <div class="product-status">
+                    Product One · Coming Soon
+                </div>
 
-    </div>
+                <h2>
+                    The first
+                    <em>expression.</em>
+                </h2>
 
-</section>
+                <p>
+                    Our first beauty product is currently being prepared.
+                    We are taking the time to get the details right before
+                    NANDÉ officially opens its doors.
+                </p>
 
+                <a href="shop.html" class="button button-dark">
+                    Discover the Product
+                </a>
 
-
-<!-- =========================================
-     BRAND STORY
-========================================= -->
-
-<section
-    class="story-section"
-    id="story"
->
-
-    <div class="story-inner">
-
-        <span>
-            THE NANDÉ PHILOSOPHY
-        </span>
-
-
-        <h2>
-            FIND YOURSELF.
-        </h2>
-
-
-        <p>
-
-            NANDÉ was created around a simple idea:
-
-            luxury beauty should not tell you who
-            to become.
-
-        </p>
-
-
-        <p>
-
-            It should give you the confidence to
-            discover who you already are.
-
-        </p>
-
-
-        <p>
-
-            Every detail of NANDÉ is intentionally
-            designed — from the product experience
-            to the packaging, visual identity and
-            ritual of using it.
-
-        </p>
-
-
-        <p class="find-yourself">
-            FIND YOURSELF
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================
-     BRAND VALUES
-========================================= -->
-
-<section class="values-section">
-
-    <div class="section-heading">
-
-        <span>
-            What We Believe
-        </span>
-
-
-        <h2>
-            Less. But Better.
-        </h2>
-
-    </div>
-
-
-    <div class="values-grid">
-
-
-        <div class="value-card">
-
-            <div class="value-number">
-                01
             </div>
 
-
-            <h3>
-                Intentional Luxury
-            </h3>
+        </section>
 
 
-            <p>
+        <!-- =========================
+             BRAND STATEMENT
+        ========================= -->
 
-                We believe luxury is found in
-                thoughtful details, refined design
-                and experiences that feel effortless.
+        <section class="statement">
 
-            </p>
-
-        </div>
-
-
-
-        <div class="value-card">
-
-            <div class="value-number">
-                02
-            </div>
-
-
-            <h3>
-                Modern Beauty
-            </h3>
-
-
-            <p>
-
-                NANDÉ is built for a new generation —
-                confident, expressive and unapologetically
-                themselves.
-
-            </p>
-
-        </div>
-
-
-
-        <div class="value-card">
-
-            <div class="value-number">
-                03
-            </div>
-
-
-            <h3>
-                Made With Purpose
-            </h3>
-
-
-            <p>
-
-                Every product, package and experience
-                exists for a reason. Nothing unnecessary.
-                Nothing accidental.
-
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================
-     FINAL CTA
-========================================= -->
-
-<section class="final-section">
-
-    <h2>
-        Find Yourself.
-    </h2>
-
-
-    <p>
-
-        The first NANDÉ creation is coming.
-
-        Be there from the beginning.
-
-    </p>
-
-
-    <a
-        href="#waiting"
-        class="btn-primary"
-    >
-        Join The Waiting List
-    </a>
-
-</section>
-
-
-
-<!-- =========================================
-     FOOTER
-========================================= -->
-
-<footer id="contact">
-
-    <div class="footer-container">
-
-
-        <div>
-
-            <h2>
+            <div class="section-label">
                 NANDÉ
+            </div>
+
+            <h2>
+                Less noise.
+                <br>
+                More <em>you.</em>
             </h2>
 
+            <p>
+                A new generation of beauty, built with intention.
+                NANDÉ is about the feeling a product leaves behind —
+                confidence, simplicity and the freedom to be yourself.
+            </p>
 
-            <p style="margin-top:15px;">
+        </section>
 
+
+        <!-- =========================
+             PRE-LAUNCH
+        ========================= -->
+
+        <section class="waitlist">
+
+            <div class="section-label">
+                Before the doors open
+            </div>
+
+            <h2>
+                Something is coming.
+            </h2>
+
+            <p>
+                The NANDÉ launch date will be announced soon.
+                Until then, follow our journey and be among the first
+                to know when the first product becomes available.
+            </p>
+
+            <div class="waitlist-buttons">
+
+                <a href="contact.html" class="button button-dark">
+                    Join the List
+                </a>
+
+                <a href="about.html" class="button button-light">
+                    Discover NANDÉ
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div class="footer-top">
+
+            <div>
+
+                <div class="footer-logo">
+                    NANDÉ
+                </div>
+
+                <div class="footer-tagline">
+                    FIND YOURSELF.
+                </div>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <div class="footer-column">
+
+                    <h4>Explore</h4>
+
+                    <a href="index.html">Home</a>
+                    <a href="shop.html">The Product</a>
+                    <a href="about.html">About NANDÉ</a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>Help</h4>
+
+                    <a href="contact.html">Contact</a>
+                    <a href="track.html">Track Order</a>
+                    <a href="cart.html">Cart</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            <span>
+                © <span id="year"></span> NANDÉ. All rights reserved.
+            </span>
+
+            <span>
                 FIND YOURSELF.
-
-            </p>
-
-        </div>
-
-
-
-        <div>
-
-            <h3>
-                Explore
-            </h3>
-
-
-            <ul>
-
-                <li>
-                    <a href="#home">
-                        Home
-                    </a>
-                </li>
-
-
-                <li>
-                    <a href="#product">
-                        The First Creation
-                    </a>
-                </li>
-
-
-                <li>
-                    <a href="#story">
-                        Our Story
-                    </a>
-                </li>
-
-
-                <li>
-                    <a href="#waiting">
-                        Waiting List
-                    </a>
-                </li>
-
-            </ul>
+            </span>
 
         </div>
 
+    </footer>
 
 
-        <div>
+    <script>
 
-            <h3>
-                Customer Care
-            </h3>
-
-
-            <ul>
-
-                <li>
-                    <a href="#">
-                        Shipping Policy
-                    </a>
-                </li>
-
-
-                <li>
-                    <a href="#">
-                        Returns
-                    </a>
-                </li>
-
-
-                <li>
-                    <a href="#">
-                        Privacy Policy
-                    </a>
-                </li>
-
-
-                <li>
-                    <a href="#">
-                        Terms & Conditions
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
-
-
-
-        <div>
-
-            <h3>
-                Follow NANDÉ
-            </h3>
-
-
-            <p>
-                Instagram
-            </p>
-
-
-            <p>
-                Facebook
-            </p>
-
-
-            <p>
-                YouTube
-            </p>
-
-
-            <p>
-                Contact Us
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <div class="footer-bottom">
-
-        © 2026 NANDÉ. All Rights Reserved.
-
-    </div>
-
-</footer>
-
-
-
-<!-- =========================================
-     JAVASCRIPT
-========================================= -->
-
-<script>
-
-
-/* =========================================
-   GRAND LAUNCH COUNTDOWN
-
-   CHANGE THIS DATE TO YOUR ACTUAL
-   LAUNCH DATE AND TIME.
-
-   CURRENT EXAMPLE:
-   10 SEPTEMBER 2026
-   8:00 PM IST
-========================================= */
-
-
-const launchDate =
-    new Date(
-        "2026-09-10T20:00:00+05:30"
-    ).getTime();
-
-
-
-function updateCountdown() {
-
-
-    const now =
-        new Date().getTime();
-
-
-    const distance =
-        launchDate - now;
-
-
-
-    /* ==============================
-       LAUNCH ARRIVED
-    ============================== */
-
-
-    if (distance <= 0) {
-
-
-        document.getElementById("days")
-            .innerText = "00";
-
-
-        document.getElementById("hours")
-            .innerText = "00";
-
-
-        document.getElementById("minutes")
-            .innerText = "00";
-
-
-        document.getElementById("seconds")
-            .innerText = "00";
-
-
-        document.getElementById("launchDate")
-            .innerText =
-            "THE FIRST CREATION HAS ARRIVED.";
-
-
-        return;
-
-    }
-
-
-
-    /* ==============================
-       CALCULATE DAYS
-    ============================== */
-
-
-    const days =
-        Math.floor(
-            distance /
-            (1000 * 60 * 60 * 24)
-        );
-
-
-
-    /* ==============================
-       CALCULATE HOURS
-    ============================== */
-
-
-    const hours =
-        Math.floor(
-            (distance %
-            (1000 * 60 * 60 * 24)) /
-            (1000 * 60 * 60)
-        );
-
-
-
-    /* ==============================
-       CALCULATE MINUTES
-    ============================== */
-
-
-    const minutes =
-        Math.floor(
-            (distance %
-            (1000 * 60 * 60)) /
-            (1000 * 60)
-        );
-
-
-
-    /* ==============================
-       CALCULATE SECONDS
-    ============================== */
-
-
-    const seconds =
-        Math.floor(
-            (distance %
-            (1000 * 60)) /
-            1000
-        );
-
-
-
-    /* ==============================
-       DISPLAY
-    ============================== */
-
-
-    document.getElementById("days")
-        .innerText =
-        String(days).padStart(2, "0");
-
-
-    document.getElementById("hours")
-        .innerText =
-        String(hours).padStart(2, "0");
-
-
-    document.getElementById("minutes")
-        .innerText =
-        String(minutes).padStart(2, "0");
-
-
-    document.getElementById("seconds")
-        .innerText =
-        String(seconds).padStart(2, "0");
-
-
-    document.getElementById("launchDate")
-        .innerText =
-        "LAUNCHING 10 SEPTEMBER 2026 • 8:00 PM IST";
-
-}
-
-
-/* Start countdown */
-
-updateCountdown();
-
-
-/* Update every second */
-
-setInterval(
-    updateCountdown,
-    1000
-);
-
-
-
-/* =========================================
-   WAITING LIST FORM
-========================================= */
-
-const waitingForm =
-    document.getElementById(
-        "waitingForm"
-    );
-
-
-waitingForm.addEventListener(
-    "submit",
-    function(event) {
-
-        event.preventDefault();
-
-
-        const email =
-            document.getElementById(
-                "email"
-            ).value.trim();
-
-
-        const message =
-            document.getElementById(
-                "formMessage"
-            );
-
-
-        if (!email) {
-
-            message.innerText =
-                "Please enter your email.";
-
-            return;
-
+        function toggleMenu() {
+            document.getElementById("navMenu").classList.toggle("active");
         }
 
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
 
-        /*
-            TEMPORARY LOCAL STORAGE
-
-            This does NOT use an API.
-
-            Emails are stored only in the
-            visitor's own browser.
-
-            For a real launch waiting list,
-            connect this form to your database
-            later.
-        */
-
-
-        let waitingList =
-            JSON.parse(
-                localStorage.getItem(
-                    "nandeWaitingList"
-                )
-            ) || [];
-
-
-        if (
-            waitingList.includes(email)
-        ) {
-
-            message.innerText =
-                "You're already on the NANDÉ waiting list.";
-
-            return;
-
-        }
-
-
-        waitingList.push(email);
-
-
-        localStorage.setItem(
-            "nandeWaitingList",
-            JSON.stringify(
-                waitingList
-            )
-        );
-
-
-        message.innerText =
-            "You're on the list. Welcome to NANDÉ.";
-
-
-        document.getElementById(
-            "email"
-        ).value = "";
-
-    }
-);
-
-
-</script>
-
+    </script>
 
 </body>
-
 </html>
