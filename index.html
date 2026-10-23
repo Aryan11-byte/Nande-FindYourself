@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -8,209 +10,93 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta name="theme-color" content="#100c09">
+<meta name="theme-color" content="#100e0b">
 
-<meta name="description" content="Aryan's Theory — Aryan Nanda's journey into global trade, guided by 25 years of business experience.">
-
-<title>Aryan's Theory — The Beginning of a Journey</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Aryan's Theory | Global Trade Journal</title>
 
 <style>
 
 :root {
 
-  --ink: #100c09;
+  --bg: #100e0b;
 
-  --paper: #eee2cb;
+  --gold: #c7a66a;
 
-  --muted: #b8a88b;
+  --ivory: #f2e8d7;
 
-  --gold: #d0a263;
-
-  --line: rgba(220,185,125,.25);
-
-  --serif: "Cormorant Garamond", Georgia, serif;
-
-  --sans: "DM Sans", Arial, sans-serif;
-
-  --gutter: clamp(22px, 6vw, 90px);
+  --muted: #b9ad99;
 
 }
 
 * { box-sizing: border-box; }
 
-html {
-
-  scroll-behavior: smooth;
-
-  scroll-padding-top: 25px;
-
-}
+html { scroll-behavior: smooth; }
 
 body {
 
   margin: 0;
 
-  background: var(--ink);
+  background: var(--bg);
 
-  color: var(--paper);
+  color: var(--ivory);
 
-  font-family: var(--sans);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   overflow-x: hidden;
 
 }
 
+body.locked { overflow: hidden; }
+
 button, a { font: inherit; }
 
-button { color: inherit; }
+.cover {
 
-a { color: inherit; }
+  position: fixed;
 
-button:focus-visible, a:focus-visible {
+  inset: 0;
 
-  outline: 2px solid var(--gold);
+  z-index: 10;
 
-  outline-offset: 5px;
-
-}
-
-img { max-width: 100%; }
-
-.eyebrow, .kicker {
-
-  color: var(--gold);
-
-  font-size: 10px;
-
-  letter-spacing: .23em;
-
-  text-transform: uppercase;
-
-  line-height: 1.8;
-
-}
-
-.wrap {
-
-  width: min(1160px, calc(100% - 2 * var(--gutter)));
-
-  margin-inline: auto;
-
-}
-
-.serif { font-family: var(--serif); }
-
-.gold { color: var(--gold); }
-
-.btn {
-
-  min-height: 48px;
-
-  display: inline-flex;
+  display: flex;
 
   justify-content: center;
 
   align-items: center;
 
-  gap: 14px;
+  text-align: center;
 
-  padding: 13px 20px;
+  overflow: hidden;
 
-  border: 1px solid rgba(208,162,99,.65);
+  background: #100e0b;
 
-  background: transparent;
-
-  color: var(--paper);
-
-  text-decoration: none;
-
-  text-transform: uppercase;
-
-  letter-spacing: .14em;
-
-  font-size: 10px;
+  transition: opacity 1s ease, transform 1s ease, filter 1s ease;
 
   cursor: pointer;
 
-  transition: background .25s, color .25s, transform .25s;
-
 }
 
-.btn:hover {
+.cover::before {
 
-  background: var(--gold);
-
-  color: var(--ink);
-
-  transform: translateY(-2px);
-
-}
-
-.btn-primary {
-
-  background: var(--gold);
-
-  color: var(--ink);
-
-}
-
-.btn-primary:hover {
-
-  background: #e6c18b;
-
-}
-
-/* INTRO */
-
-#intro {
-
-  position: relative;
-
-  isolation: isolate;
-
-  min-height: 100svh;
-
-  min-height: 100dvh;
-
-  display: flex;
-
-  flex-direction: column;
-
-  overflow: clip;
-
-  background: #17100b;
-
-}
-
-.hero-art {
+  content: "";
 
   position: absolute;
 
+  inset: -5%;
+
   z-index: -2;
 
-  inset: 0;
+  background:
 
-  width: 100%;
+    linear-gradient(to bottom, #100e0b55, #100e0bd9),
 
-  height: 100%;
+    url("aryans-theory-cover.png") center / cover no-repeat;
 
-  object-fit: cover;
-
-  object-position: 60% center;
-
-  opacity: .62;
-
-  animation: reveal 1.4s ease both;
+  animation: slowZoom 18s ease-in-out infinite alternate;
 
 }
 
-#intro::after {
+.cover::after {
 
   content: "";
 
@@ -220,123 +106,69 @@ img { max-width: 100%; }
 
   z-index: -1;
 
+  background: radial-gradient(ellipse, transparent, #100e0b99);
+
   pointer-events: none;
 
-  background:
+}
 
-    linear-gradient(90deg, rgba(12,9,7,.96) 0%,
+.cover-content {
 
-      rgba(12,9,7,.77) 48%, rgba(12,9,7,.18) 100%),
+  width: min(90%, 480px);
 
-    linear-gradient(0deg, #100c09 0%,
+  padding: 30px 0 65px;
 
-      transparent 30%, rgba(12,9,7,.35) 100%);
+  animation: appear 1.2s ease both;
 
 }
 
-.topbar {
+.eyebrow {
 
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  gap: 15px;
-
-  padding: 22px var(--gutter);
-
-  border-bottom: 1px solid rgba(255,255,255,.12);
-
-}
-
-.wordmark {
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 10px;
+  color: var(--gold);
 
   font-size: 10px;
 
+  letter-spacing: 4px;
+
   text-transform: uppercase;
 
-  letter-spacing: .2em;
+  line-height: 1.8;
 
 }
 
-.wordmark::before {
+.rule {
 
-  content: "";
-
-  width: 25px;
+  width: 42px;
 
   height: 1px;
+
+  margin: 24px auto;
 
   background: var(--gold);
 
 }
 
-.menu-button {
+.cover h1 {
 
-  display: grid;
+  margin: 0;
 
-  place-items: center;
+  font-family: Georgia, serif;
 
-  width: 44px;
+  font-size: clamp(55px, 14vw, 88px);
 
-  height: 44px;
+  font-weight: 400;
 
-  flex-shrink: 0;
+  line-height: .9;
 
-  border: 1px solid var(--line);
-
-  border-radius: 50%;
-
-  background: rgba(16,12,9,.65);
-
-  cursor: pointer;
-
-  font-size: 18px;
+  letter-spacing: -4px;
 
 }
 
-.hero-layout {
+.cover h1 em {
 
-  width: min(1160px, calc(100% - 2 * var(--gutter)));
+  display: block;
 
-  flex: 1;
-
-  margin: 0 auto;
-
-  padding: clamp(50px, 10vh, 110px) 0 130px;
-
-  display: flex;
-
-  align-items: center;
-
-}
-
-.hero-copy {
-
-  max-width: 610px;
-
-  animation: rise .9s ease both;
-
-}
-
-.hero-copy h1 {
-
-  margin: 22px 0;
-
-  font: 500 clamp(54px, 7.5vw, 100px)/.88 var(--serif);
-
-  letter-spacing: -.045em;
-
-}
-
-.hero-copy h1 em {
+  margin-top: 10px;
 
   color: var(--gold);
 
@@ -344,65 +176,125 @@ img { max-width: 100%; }
 
 }
 
-.hero-copy p {
+.subtitle {
 
-  max-width: 380px;
+  margin: 26px auto;
 
-  color: #d4c4a8;
+  max-width: 280px;
 
-  font-size: 14px;
+  color: var(--muted);
 
-  line-height: 1.9;
+  font-family: Georgia, serif;
 
-  font-weight: 300;
+  font-size: 18px;
+
+  line-height: 1.6;
 
 }
 
-.hero-meta {
+.open-button {
 
-  margin-top: 28px;
+  min-height: 52px;
 
-  display: flex;
+  padding: 0 22px;
 
-  align-items: center;
+  border: 1px solid var(--gold);
 
-  gap: 12px;
+  border-radius: 40px;
 
-  flex-wrap: wrap;
+  background: #100e0b99;
+
+  color: var(--ivory);
+
+  letter-spacing: 2px;
+
+  font-size: 11px;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  animation: breathe 3s infinite;
+
+  transition: background .3s, transform .3s;
+
+}
+
+.open-button:hover {
+
+  background: #c7a66a22;
+
+  transform: translateY(-3px);
+
+}
+
+.cover-bottom {
+
+  position: absolute;
+
+  bottom: 28px;
+
+  left: 16px;
+
+  right: 16px;
 
   color: var(--muted);
 
   font-size: 10px;
 
-  letter-spacing: .12em;
+  letter-spacing: 2px;
+
+  line-height: 1.8;
 
   text-transform: uppercase;
 
 }
 
-.hero-meta .dot { color: var(--gold); }
+.cover.leaving {
 
-.hero-actions {
+  opacity: 0;
 
-  display: flex;
+  transform: scale(1.05);
 
-  flex-wrap: wrap;
+  filter: blur(8px);
 
-  gap: 12px;
-
-  margin-top: 30px;
+  pointer-events: none;
 
 }
 
-.hero-bottom {
+.site {
 
-  position: absolute;
+  opacity: 0;
 
-  bottom: 25px;
+  visibility: hidden;
 
-  left: var(--gutter);
+  transform: translateY(24px);
 
-  right: var(--gutter);
+  filter: blur(5px);
+
+  transition: opacity 1s ease, transform 1s ease, filter 1s ease;
+
+}
+
+body.open .site {
+
+  opacity: 1;
+
+  visibility: visible;
+
+  transform: none;
+
+  filter: none;
+
+}
+
+header {
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 5;
 
   display: flex;
 
@@ -410,751 +302,385 @@ img { max-width: 100%; }
 
   justify-content: space-between;
 
-  gap: 15px;
+  gap: 12px;
 
-  color: #c3b294;
+  padding: 17px 6%;
 
-  font-size: 9px;
+  border-bottom: 1px solid #c7a66a33;
 
-  letter-spacing: .16em;
+  background: #100e0bed;
 
-  text-transform: uppercase;
+  backdrop-filter: blur(14px);
 
 }
 
-.scroll-cue {
+.brand {
+
+  color: var(--ivory);
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+}
+
+nav { display: flex; gap: 18px; }
+
+nav a {
+
+  color: var(--muted);
+
+  font-size: 11px;
+
+  text-decoration: none;
+
+}
+
+nav a:hover { color: var(--gold); }
+
+.hero {
+
+  min-height: 82vh;
 
   display: flex;
 
   align-items: center;
 
-  gap: 10px;
-
-}
-
-.scroll-cue::before {
-
-  content: "";
-
-  width: 28px;
-
-  height: 1px;
-
-  background: var(--gold);
-
-}
-
-/* GENERAL SECTIONS */
-
-section.content-section {
-
-  padding: clamp(75px, 12vw, 145px) 0;
-
-  border-top: 1px solid var(--line);
-
-}
-
-.section-heading {
-
-  max-width: 730px;
-
-  margin-bottom: 48px;
-
-}
-
-.section-heading h2 {
-
-  margin: 18px 0;
-
-  font: 500 clamp(43px, 7vw, 82px)/.95 var(--serif);
-
-  letter-spacing: -.035em;
-
-}
-
-.section-heading p {
-
-  max-width: 530px;
-
-  color: #c3b49b;
-
-  font-size: 14px;
-
-  line-height: 1.95;
-
-  font-weight: 300;
-
-}
-
-/* FOUNDER STORY */
-
-#story {
+  padding: 90px 9%;
 
   background:
 
-    radial-gradient(ellipse at 100% 40%, rgba(95,59,28,.19), transparent 55%),
+    linear-gradient(90deg, #100e0bf2, #100e0b88),
 
-    #100c09;
+    linear-gradient(0deg, #100e0b, transparent 60%),
+
+    url("aryans-theory-cover.png") center / cover no-repeat;
+
+  border-bottom: 1px solid #c7a66a33;
 
 }
+
+.hero-inner {
+
+  max-width: 780px;
+
+  animation: appear 1s .2s both;
+
+}
+
+.hero h2, .section h2 {
+
+  margin: 18px 0;
+
+  font-family: Georgia, serif;
+
+  font-size: clamp(45px, 8vw, 100px);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: -3px;
+
+}
+
+.hero h2 em, .section h2 em { color: var(--gold); }
+
+.hero p:not(.eyebrow), .copy p, .section-intro {
+
+  max-width: 560px;
+
+  color: var(--muted);
+
+  font-size: 15px;
+
+  line-height: 1.9;
+
+}
+
+.text-link {
+
+  display: inline-block;
+
+  margin-top: 20px;
+
+  padding-bottom: 8px;
+
+  border-bottom: 1px solid var(--gold);
+
+  color: var(--ivory);
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  text-decoration: none;
+
+  text-transform: uppercase;
+
+}
+
+.section {
+
+  padding: 90px 9%;
+
+  border-bottom: 1px solid #c7a66a22;
+
+}
+
+.section h2 { font-size: clamp(42px, 6vw, 72px); }
 
 .story-grid {
 
   display: grid;
 
-  grid-template-columns: .8fr 1.2fr;
+  grid-template-columns: 1fr 1fr;
 
-  gap: clamp(35px, 8vw, 100px);
+  gap: 50px;
 
   align-items: start;
 
 }
 
-.story-aside {
+.copy p:first-child { margin-top: 0; }
 
-  position: relative;
+.stat {
 
-  border: 1px solid var(--line);
+  margin-top: 35px;
 
-  padding: 30px;
+  padding: 25px;
 
-  background: rgba(255,255,255,.015);
+  border: 1px solid #c7a66a44;
+
+  background: #c7a66a0b;
 
 }
 
-.story-aside .big-number {
+.stat strong {
 
   display: block;
 
   color: var(--gold);
 
-  font: 500 clamp(68px, 10vw, 110px)/1 var(--serif);
+  font-family: Georgia, serif;
 
-}
-
-.story-aside h3 {
-
-  margin: 14px 0 10px;
-
-  font: 500 29px/1.1 var(--serif);
-
-}
-
-.story-aside p {
-
-  color: var(--muted);
-
-  font-size: 12px;
-
-  line-height: 1.9;
-
-}
-
-.story-copy h2 {
-
-  margin: 15px 0 25px;
-
-  font: 500 clamp(43px, 6vw, 72px)/.96 var(--serif);
-
-}
-
-.story-copy p {
-
-  color: #c8baa2;
-
-  font-size: 14px;
-
-  line-height: 2;
-
-  font-weight: 300;
-
-}
-
-.story-copy .signature {
-
-  margin-top: 30px;
-
-  color: var(--gold);
-
-  font: italic 27px var(--serif);
-
-}
-
-/* PHILOSOPHY */
-
-#philosophy {
-
-  background: #17100b;
-
-}
-
-.values-grid {
-
-  display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
-  border: 1px solid var(--line);
-
-}
-
-.value-card {
-
-  padding: 30px;
-
-  min-width: 0;
-
-}
-
-.value-card + .value-card {
-
-  border-left: 1px solid var(--line);
-
-}
-
-.value-card .number {
-
-  color: var(--gold);
-
-  font: italic 20px var(--serif);
-
-}
-
-.value-card h3 {
-
-  margin: 24px 0 12px;
-
-  font: 500 29px var(--serif);
-
-}
-
-.value-card p {
-
-  margin: 0;
-
-  color: #bdb09a;
-
-  font-size: 12px;
-
-  line-height: 1.9;
-
-}
-
-/* JOURNAL */
-
-#journal {
-
-  background:
-
-    radial-gradient(ellipse at 50% 0%, #352315 0%, #17100b 45%, #0d0a08 100%);
-
-}
-
-.journal-title {
-
-  text-align: center;
-
-  margin-inline: auto;
-
-}
-
-.journal-title .ornament {
-
-  color: var(--gold);
-
-  letter-spacing: .5em;
-
-  font-size: 19px;
-
-}
-
-.journal-title h2 {
-
-  margin: 20px 0;
-
-  font: 500 clamp(48px, 8vw, 90px)/.92 var(--serif);
-
-}
-
-.journal-title h2 em {
-
-  color: var(--gold);
+  font-size: 70px;
 
   font-weight: 400;
 
 }
 
-.journal-title p {
+.stat p {
 
-  margin-inline: auto;
+  margin-bottom: 0;
+
+  color: var(--muted);
+
+  line-height: 1.7;
 
 }
 
-.chapters-grid {
+.principles {
+
+  background: #17140f;
+
+}
+
+.grid {
 
   display: grid;
 
   grid-template-columns: repeat(3, minmax(0, 1fr));
 
-  gap: 1px;
+  gap: 14px;
 
-  border: 1px solid var(--line);
-
-  background: var(--line);
+  margin-top: 35px;
 
 }
 
-.chapter-card {
-
-  width: 100%;
-
-  min-width: 0;
-
-  min-height: 255px;
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: stretch;
-
-  text-align: left;
+.card {
 
   padding: 27px;
 
-  border: 0;
+  border: 1px solid #c7a66a33;
 
-  background: #110d0a;
+  background: #100e0b55;
 
-  cursor: pointer;
-
-  transition: background .25s;
+  transition: transform .3s, border-color .3s;
 
 }
 
-.chapter-card:hover,
+.card:hover {
 
-.chapter-card[aria-expanded="true"] {
+  transform: translateY(-5px);
 
-  background: #2a1d12;
+  border-color: var(--gold);
 
 }
 
-.chapter-number {
+.card small {
 
   color: var(--gold);
 
-  font: italic 17px var(--serif);
+  letter-spacing: 2px;
 
 }
 
-.chapter-card h3 {
+.card h3 {
 
-  margin: 26px 0 12px;
+  font-family: Georgia, serif;
 
-  font: 500 29px/1 var(--serif);
+  font-size: 25px;
 
-}
-
-.chapter-card p {
-
-  color: #b8aa93;
-
-  font-size: 12px;
-
-  line-height: 1.85;
+  font-weight: 400;
 
 }
 
-.chapter-card .read {
+.card p {
 
-  margin-top: auto;
-
-  padding-top: 18px;
-
-  color: var(--gold);
-
-  font-size: 9px;
-
-  letter-spacing: .17em;
-
-  text-transform: uppercase;
-
-}
-
-.chapter-detail {
-
-  display: none;
-
-  max-width: 850px;
-
-  margin: 35px auto 0;
-
-  padding: 30px 0;
-
-  border-top: 1px solid var(--line);
-
-  border-bottom: 1px solid var(--line);
-
-}
-
-.chapter-detail.active { display: block; }
-
-.chapter-detail h3 {
-
-  margin: 12px 0;
-
-  font: 500 clamp(36px, 6vw, 55px)/1 var(--serif);
-
-}
-
-.chapter-detail p {
-
-  color: #c3b49b;
+  color: var(--muted);
 
   font-size: 14px;
 
-  line-height: 2;
+  line-height: 1.8;
 
 }
 
-/* CLOSING */
+.chapters {
 
-#closing {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
+
+  margin-top: 35px;
+
+}
+
+.quote {
+
+  padding: 100px 22px;
 
   text-align: center;
 
-  background: #100c09;
+  background: radial-gradient(ellipse, #c7a66a15, transparent 70%);
 
 }
 
-#closing h2 {
+.quote blockquote {
 
-  max-width: 850px;
+  max-width: 800px;
 
   margin: 25px auto;
 
-  font: 500 clamp(44px, 8vw, 90px)/.95 var(--serif);
+  font-family: Georgia, serif;
+
+  font-size: clamp(36px, 6vw, 68px);
+
+  line-height: 1.15;
+
+  letter-spacing: -2px;
 
 }
 
-#closing p {
+.quote em { color: var(--gold); }
 
-  max-width: 500px;
-
-  margin: 0 auto 28px;
-
-  color: #c3b49b;
-
-  font-size: 13px;
-
-  line-height: 1.9;
-
-}
+.quote p { color: var(--muted); line-height: 1.8; }
 
 footer {
-
-  padding: 30px var(--gutter);
-
-  border-top: 1px solid var(--line);
 
   display: flex;
 
   justify-content: space-between;
 
-  align-items: center;
-
-  flex-wrap: wrap;
-
   gap: 16px;
 
-  color: #a99a81;
+  padding: 25px 6%;
+
+  border-top: 1px solid #c7a66a33;
+
+  color: var(--muted);
 
   font-size: 10px;
 
-  letter-spacing: .1em;
+  letter-spacing: 1px;
 
-  text-transform: uppercase;
-
-}
-
-footer a {
-
-  color: var(--gold);
-
-  text-decoration: none;
-
-  border-bottom: 1px solid var(--line);
-
-  padding-bottom: 4px;
+  line-height: 1.8;
 
 }
 
-/* NAVIGATION */
+.reveal {
 
-#menuPanel {
+  opacity: 0;
 
-  position: fixed;
+  transform: translateY(22px);
 
-  inset: 0;
-
-  z-index: 20;
-
-  display: none;
-
-  align-items: center;
-
-  justify-content: center;
-
-  padding: 25px;
-
-  background: rgba(12,9,7,.97);
-
-  backdrop-filter: blur(15px);
+  transition: opacity .8s ease, transform .8s ease;
 
 }
 
-#menuPanel.open { display: flex; }
+.reveal.visible {
 
-.menu-inner {
+  opacity: 1;
 
-  width: 100%;
-
-  text-align: center;
+  transform: none;
 
 }
 
-.menu-inner .menu-link {
+@keyframes slowZoom {
 
-  display: block;
+  from { transform: scale(1.02); }
 
-  margin: 16px auto;
-
-  padding: 8px;
-
-  border: 0;
-
-  background: none;
-
-  font: 500 clamp(33px, 7vw, 58px)/1.1 var(--serif);
-
-  cursor: pointer;
+  to { transform: scale(1.12); }
 
 }
 
-.menu-inner .menu-link:hover { color: var(--gold); }
-
-.menu-close {
-
-  position: absolute;
-
-  top: 22px;
-
-  right: 22px;
-
-}
-
-@keyframes rise {
+@keyframes appear {
 
   from { opacity: 0; transform: translateY(18px); }
 
-  to { opacity: 1; transform: translateY(0); }
+  to { opacity: 1; transform: none; }
 
 }
 
-@keyframes reveal {
+@keyframes breathe {
 
-  from { opacity: 0; transform: scale(1.035); }
+  0%, 100% { box-shadow: 0 0 0 0 #c7a66a00; }
 
-  to { opacity: .62; transform: scale(1); }
+  50% { box-shadow: 0 0 0 7px #c7a66a12; }
 
 }
 
-/* TABLETS AND PHONES */
+@media (max-width: 650px) {
 
-@media (max-width: 760px) {
+  header { padding: 15px 18px; }
 
-  :root { --gutter: 23px; }
+  nav { gap: 12px; }
 
-  #intro {
+  nav a { font-size: 10px; }
 
-    min-height: 100svh;
+  nav a:last-child { display: none; }
 
-    min-height: 100dvh;
+  .hero { min-height: 78svh; padding: 75px 23px; }
 
-  }
+  .hero h2 { font-size: clamp(46px, 13vw, 66px); }
 
-  .hero-art {
+  .section { padding: 70px 22px; }
 
-    object-position: 61% center;
+  .story-grid { grid-template-columns: 1fr; gap: 20px; }
 
-  }
+  .grid { grid-template-columns: 1fr; }
 
-  #intro::after {
+  .chapters { grid-template-columns: 1fr; }
 
-    background:
+  .card { padding: 23px; }
 
-      linear-gradient(90deg, rgba(12,9,7,.78), rgba(12,9,7,.32)),
-
-      linear-gradient(0deg, #100c09 0%, rgba(16,12,9,.76) 20%,
-
-        rgba(12,9,7,.12) 65%, rgba(12,9,7,.48) 100%);
-
-  }
-
-  .topbar { padding-block: 16px; }
-
-  .hero-layout {
-
-    padding: clamp(42px, 8vh, 80px) 0 125px;
-
-    align-items: center;
-
-  }
-
-  .hero-copy { max-width: 470px; }
-
-  .hero-copy h1 {
-
-    font-size: clamp(53px, 12.4vw, 78px);
-
-    line-height: .91;
-
-    margin: 19px 0;
-
-  }
-
-  .hero-copy p {
-
-    max-width: 310px;
-
-    font-size: 13px;
-
-    line-height: 1.85;
-
-  }
-
-  .hero-actions { gap: 9px; }
-
-  .btn {
-
-    padding: 13px 15px;
-
-    font-size: 9px;
-
-  }
-
-  .hero-bottom {
-
-    bottom: 20px;
-
-    align-items: flex-end;
-
-  }
-
-  .hero-bottom > span:last-child {
-
-    max-width: 140px;
-
-    text-align: right;
-
-    line-height: 1.8;
-
-  }
-
-  .story-grid {
-
-    grid-template-columns: 1fr;
-
-    gap: 35px;
-
-  }
-
-  .story-aside {
-
-    max-width: 430px;
-
-    padding: 25px;
-
-  }
-
-  .values-grid {
-
-    grid-template-columns: 1fr;
-
-  }
-
-  .value-card { padding: 25px; }
-
-  .value-card + .value-card {
-
-    border-left: 0;
-
-    border-top: 1px solid var(--line);
-
-  }
-
-  .chapters-grid {
-
-    grid-template-columns: 1fr;
-
-  }
-
-  .chapter-card {
-
-    min-height: 0;
-
-    padding: 24px;
-
-  }
-
-  .chapter-card h3 { margin-top: 17px; }
-
-  .chapter-card p { margin-bottom: 22px; }
-
-  footer {
-
-    flex-direction: column;
-
-    text-align: center;
-
-    line-height: 1.8;
-
-  }
-
-}
-
-@media (max-width: 380px) {
-
-  :root { --gutter: 18px; }
-
-  .wordmark { font-size: 9px; letter-spacing: .15em; }
-
-  .hero-copy h1 { font-size: 51px; }
-
-  .hero-copy p { font-size: 12px; }
-
-  .hero-actions {
-
-    align-items: stretch;
-
-    flex-direction: column;
-
-    max-width: 245px;
-
-  }
-
-  .hero-actions .btn { width: 100%; }
-
-  .hero-bottom { font-size: 8px; }
-
-}
-
-@media (max-height: 700px) and (min-width: 761px) {
-
-  .hero-layout { padding-top: 45px; padding-bottom: 100px; }
-
-  .hero-copy h1 { font-size: clamp(52px, 6vw, 74px); }
+  footer { flex-direction: column; }
 
 }
 
@@ -1164,13 +690,13 @@ footer a {
 
     animation-duration: .01ms !important;
 
-    animation-iteration-count: 1 !important;
-
     transition-duration: .01ms !important;
 
     scroll-behavior: auto !important;
 
   }
+
+  .reveal { opacity: 1; transform: none; }
 
 }
 
@@ -1178,802 +704,319 @@ footer a {
 
 </head>
 
-<body>
-  <!-- CINEMATIC BOOK COVER -->
+<body class="locked">
 
-<section id="bookCover" aria-label="Aryan's Theory book cover">
-
-  <div class="cover-image"></div>
-
-  <div class="cover-shade"></div>
-
-  <div class="cover-brand">
-
-    <span class="cover-line"></span>
-
-    ARYAN NANDA
-
-    <span class="cover-line"></span>
-
-  </div>
+<section class="cover" id="cover" aria-label="Open Aryan's Theory">
 
   <div class="cover-content">
 
-    <p class="cover-eyebrow">A personal field journal · Est. 2026</p>
+    <p class="eyebrow">Aryan Nanda · Personal Field Journal</p>
 
-    <h1>ARYAN'S<br><em>THEORY</em></h1>
+    <div class="rule"></div>
 
-    <p class="cover-subtitle">
+    <h1>ARYAN'S <em>THEORY</em></h1>
 
-      A journey into the world of global trade
+    <p class="subtitle">A journey into the world of global trade.</p>
 
-    </p>
+    <button class="open-button" id="openButton" type="button">
 
-    <button id="enterJournal" class="cover-open">
-
-      <span class="cover-open-icon">↗</span>
-
-      <span>Open the Journal</span>
-
-      <span class="cover-open-icon">↗</span>
+      ↗ &nbsp; Open the Journal &nbsp; ↗
 
     </button>
 
-    <p class="cover-hint">A new chapter begins here</p>
-
   </div>
 
-  <div class="cover-footer">
+  <div class="cover-bottom">
 
-    <span>Experience passed down.</span>
-
-    <span>Knowledge built forward.</span>
+    Experience passed down. Knowledge built forward.
 
   </div>
 
 </section>
 
-<div id="siteContent">
+<div class="site" id="site" inert>
 
-<main>
+  <header>
 
-  <!-- COVER -->
+    <a class="brand" href="#top">ARYAN NANDA</a>
 
-  <section id="intro" aria-label="Aryan Nanda's introduction">
+    <nav aria-label="Main navigation">
 
-    <!-- Keep this image beside your HTML file -->
+      <a href="#story">My Story</a>
 
-    <img class="hero-art"
+      <a href="#principles">Principles</a>
 
-      src="aryans-theory-cover.png"
+      <a href="#journal">Journal</a>
 
-      alt="An antique journal surrounded by maps and objects associated with global trade"
+    </nav>
 
-      fetchpriority="high">
+  </header>
 
-    <header class="topbar">
+  <main id="top">
 
-      <a class="wordmark" href="#intro"
+    <section class="hero">
 
-        style="text-decoration:none">ARYAN NANDA</a>
+      <div class="hero-inner">
 
-      <button class="menu-button" id="menuOpen"
+        <p class="eyebrow">A Personal Field Journal · Est. 2026</p>
 
-        aria-label="Open navigation" aria-expanded="false"
-
-        aria-controls="menuPanel">☰</button>
-
-    </header>
-
-    <div class="hero-layout">
-
-      <div class="hero-copy">
-
-        <div class="eyebrow">A personal field journal · Est. 2026</div>
-
-        <h1>
-
-          Every market<br>
-
-          has a story.<br>
-
-          <em>Every trade</em><br>
-
-          has a theory.
-
-        </h1>
+        <h2>Every market has a story.<br><em>Every trade</em> has a theory.</h2>
 
         <p>
 
-          I'm Aryan Nanda. At 16, I'm beginning my journey into
+          I'm Aryan Nanda. At 16, I'm beginning to explore business
 
-          the world of business, learning from my father's
+          and global trade, learning from my father's 25 years of
 
-          25 years of experience and discovering the ideas
-
-          that move the world.
+          experience and building my own understanding one lesson at a time.
 
         </p>
 
-        <div class="hero-meta">
+        <a class="text-link" href="#story">Discover the story ↘</a>
 
-          <span>Learning by doing</span>
+      </div>
 
-          <span class="dot">✳</span>
+    </section>
 
-          <span>Thinking globally</span>
+    <section class="section" id="story">
+
+      <div class="story-grid">
+
+        <div class="reveal">
+
+          <p class="eyebrow">Chapter 01 · The Beginning</p>
+
+          <h2>A legacy to learn from.<br><em>A future to build.</em></h2>
+
+          <div class="stat">
+
+            <strong>25</strong>
+
+            <p>Years of business experience to learn from — and a lifetime of questions still ahead.</p>
+
+          </div>
 
         </div>
 
-        <div class="hero-actions">
+        <div class="copy reveal">
 
-          <a class="btn btn-primary" href="#story">
+          <p>Every journey begins with curiosity. Mine begins by listening, observing, and asking better questions.</p>
 
-            My story <span>↗</span>
+          <p>My father has spent <strong>25 years learning the realities of business</strong> — the patience behind a decision, the trust behind a partnership, and the discipline required to keep moving forward.</p>
 
-          </a>
+          <p>I'm fortunate to learn from that experience, while remembering that my own path is only just beginning.</p>
 
-          <a class="btn" href="#journal">
-
-            Explore the journal <span>↓</span>
-
-          </a>
+          <p>This journal is where I collect ideas, explore how markets connect, and turn lessons into questions worth thinking about. It isn't a claim to know everything. It's a commitment to keep learning.</p>
 
         </div>
 
       </div>
 
-    </div>
+    </section>
 
-    <div class="hero-bottom">
+    <section class="section principles" id="principles">
 
-      <span class="scroll-cue">A journey just beginning</span>
+      <p class="eyebrow">Chapter 02 · The Mindset</p>
 
-      <span>Built on experience. Driven by curiosity.</span>
+      <h2>Learn with humility.<br><em>Think with intention.</em></h2>
 
-    </div>
+      <div class="grid">
 
-  </section>
+        <article class="card reveal">
 
-  <!-- FOUNDER STORY -->
+          <small>01 / CURIOSITY</small>
 
-  <section id="story" class="content-section">
+          <h3>Ask why.</h3>
 
-    <div class="wrap story-grid">
-
-      <aside class="story-aside">
-
-        <div class="kicker">Where it begins</div>
-
-        <span class="big-number">25<span style="font-size:.5em">+</span></span>
-
-        <h3>Years of experience.<br>A new generation.</h3>
-
-        <p>
-
-          My father's years in business are the foundation
-
-          from which I begin learning, exploring, and building
-
-          my own understanding.
-
-        </p>
-
-      </aside>
-
-      <div class="story-copy">
-
-        <div class="eyebrow">The person behind the journal</div>
-
-        <h2>I'm not starting with all the answers.<br>
-
-          <span class="gold">I'm starting with curiosity.</span>
-
-        </h2>
-
-        <p>
-
-          My name is Aryan Nanda. I'm 16, and I'm beginning
-
-          to explore the business world through my father's
-
-          25 years of experience.
-
-        </p>
-
-        <p>
-
-          Watching and learning from someone who has spent
-
-          decades in business has given me a valuable starting
-
-          point. But I know that experience cannot simply be
-
-          inherited. Understanding must be earned.
-
-        </p>
-
-        <p>
-
-          That's why I want to study how products find their
-
-          markets, how businesses choose suppliers, how goods
-
-          cross borders, and how trust turns conversations
-
-          into lasting relationships.
-
-        </p>
-
-        <p>
-
-          Aryan's Theory is my way of documenting that process.
-
-          It is a journal of lessons, questions, observations,
-
-          and ideas as I learn about trade and business.
-
-        </p>
-
-        <p>
-
-          My father's experience gives me a foundation.
-
-          My responsibility is to listen carefully, think
-
-          independently, and build knowledge through effort.
-
-        </p>
-
-        <p class="signature">— Aryan Nanda</p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- PHILOSOPHY -->
-
-  <section id="philosophy" class="content-section">
-
-    <div class="wrap">
-
-      <div class="section-heading">
-
-        <div class="eyebrow">The philosophy</div>
-
-        <h2>Experience is the foundation.<br>
-
-          <span class="gold">Learning is the journey.</span>
-
-        </h2>
-
-        <p>
-
-          I believe a meaningful business journey begins with
-
-          good questions, honest learning, and respect for
-
-          the people who make it possible.
-
-        </p>
-
-      </div>
-
-      <div class="values-grid">
-
-        <article class="value-card">
-
-          <div class="number">01</div>
-
-          <h3>Stay curious.</h3>
-
-          <p>
-
-            Ask why things work the way they do. Research
-
-            before assuming. Treat every conversation as
-
-            an opportunity to understand something new.
-
-          </p>
+          <p>Look beyond the price or headline. Understand the people, choices, and conditions behind it.</p>
 
         </article>
 
-        <article class="value-card">
+        <article class="card reveal">
 
-          <div class="number">02</div>
+          <small>02 / PATIENCE</small>
 
-          <h3>Build on experience.</h3>
+          <h3>Study the long game.</h3>
 
-          <p>
-
-            Learn from people who have been there before.
-
-            Respect their lessons while developing the
-
-            judgment to think for yourself.
-
-          </p>
+          <p>Good judgement grows through time, careful observation, and learning from mistakes.</p>
 
         </article>
 
-        <article class="value-card">
+        <article class="card reveal">
 
-          <div class="number">03</div>
+          <small>03 / INTEGRITY</small>
 
-          <h3>Think long term.</h3>
+          <h3>Build trust first.</h3>
 
-          <p>
-
-            Value trust over shortcuts, preparation over
-
-            guesswork, and consistent progress over the
-
-            pressure to know everything immediately.
-
-          </p>
+          <p>Reputation is earned through consistency, fairness, and keeping your word.</p>
 
         </article>
 
       </div>
 
-    </div>
+    </section>
 
-  </section>
+    <section class="section" id="journal">
 
-  <!-- JOURNAL -->
+      <p class="eyebrow">Chapter 03 · The Field Notes</p>
 
-  <section id="journal" class="content-section">
+      <h2>A world of ideas.<br><em>One lesson at a time.</em></h2>
 
-    <div class="wrap">
+      <p class="section-intro">Six themes that will shape the questions I ask as I learn about business and global trade.</p>
 
-      <div class="section-heading journal-title">
+      <div class="chapters">
 
-        <div class="ornament">✳ &nbsp; ✳ &nbsp; ✳</div>
+        <article class="card reveal">
 
-        <div class="kicker">Inside the cover</div>
+          <small>FIELD NOTE 01</small>
 
-        <h2>The world<br> <em>behind trade.</em></h2>
+          <h3>Markets & People</h3>
 
-        <p>
+          <p>How needs, culture, and human decisions influence what the world buys and sells.</p>
 
-          Six starting points for exploring the people,
+        </article>
 
-          decisions, numbers, and journeys behind international
+        <article class="card reveal">
 
-          business. Every chapter is another opportunity to learn.
+          <small>FIELD NOTE 02</small>
 
-        </p>
+          <h3>The Art of Negotiation</h3>
+
+          <p>Listening carefully, finding shared value, and building agreements that last.</p>
+
+        </article>
+
+        <article class="card reveal">
+
+          <small>FIELD NOTE 03</small>
+
+          <h3>Global Connections</h3>
+
+          <p>How countries, suppliers, businesses, and customers depend on one another.</p>
+
+        </article>
+
+        <article class="card reveal">
+
+          <small>FIELD NOTE 04</small>
+
+          <h3>Risk & Judgement</h3>
+
+          <p>Thoughtful decisions, uncertainty, evidence, responsibility, and timing.</p>
+
+        </article>
+
+        <article class="card reveal">
+
+          <small>FIELD NOTE 05</small>
+
+          <h3>Trust & Reputation</h3>
+
+          <p>The quiet value of reliability, honest communication, and long-term relationships.</p>
+
+        </article>
+
+        <article class="card reveal">
+
+          <small>FIELD NOTE 06</small>
+
+          <h3>Lessons in Progress</h3>
+
+          <p>Keeping an open mind, recording what works, and learning from what doesn't.</p>
+
+        </article>
 
       </div>
 
-      <div class="chapters-grid">
+    </section>
 
-        <button class="chapter-card" data-chapter="buyers"
+    <section class="quote reveal">
 
-          aria-expanded="false" aria-controls="chapterDetail">
+      <p class="eyebrow">The Next Chapter</p>
 
-          <span class="chapter-number">Chapter I · 01</span>
+      <blockquote>Experience shows the way.<br><em>Curiosity makes it your own.</em></blockquote>
 
-          <h3>Finding the Buyer</h3>
+      <p>A student's journal, inspired by experience and driven by questions.</p>
 
-          <p>
+    </section>
 
-            How businesses discover markets, understand demand,
+  </main>
 
-            and build trust with potential customers.
+  <footer>
 
-          </p>
+    <span>© 2026 Aryan's Theory</span>
 
-          <span class="read">Explore this chapter ↗</span>
+    <span>Experience passed down · Knowledge built forward</span>
 
-        </button>
-
-        <button class="chapter-card" data-chapter="sourcing"
-
-          aria-expanded="false" aria-controls="chapterDetail">
-
-          <span class="chapter-number">Chapter II · 02</span>
-
-          <h3>The Art of Sourcing</h3>
-
-          <p>
-
-            Products, suppliers, quality, pricing, and the
-
-            details that make a business decision worthwhile.
-
-          </p>
-
-          <span class="read">Explore this chapter ↗</span>
-
-        </button>
-
-        <button class="chapter-card" data-chapter="journey"
-
-          aria-expanded="false" aria-controls="chapterDetail">
-
-          <span class="chapter-number">Chapter III · 03</span>
-
-          <h3>A Product's Journey</h3>
-
-          <p>
-
-            Freight, shipping, routes, delivery terms, and the
-
-            journey between businesses across borders.
-
-          </p>
-
-          <span class="read">Explore this chapter ↗</span>
-
-        </button>
-
-        <button class="chapter-card" data-chapter="paperwork"
-
-          aria-expanded="false" aria-controls="chapterDetail">
-
-          <span class="chapter-number">Chapter IV · 04</span>
-
-          <h3>Paper That Moves Worlds</h3>
-
-          <p>
-
-            Trade documents, customs procedures, compliance,
-
-            and why getting the details right matters.
-
-          </p>
-
-          <span class="read">Explore this chapter ↗</span>
-
-        </button>
-
-        <button class="chapter-card" data-chapter="numbers"
-
-          aria-expanded="false" aria-controls="chapterDetail">
-
-          <span class="chapter-number">Chapter V · 05</span>
-
-          <h3>The Numbers Behind It</h3>
-
-          <p>
-
-            Costs, margins, currency, and the difference
-
-            between an attractive price and a viable deal.
-
-          </p>
-
-          <span class="read">Explore this chapter ↗</span>
-
-        </button>
-
-        <button class="chapter-card" data-chapter="mindset"
-
-          aria-expanded="false" aria-controls="chapterDetail">
-
-          <span class="chapter-number">Chapter VI · 06</span>
-
-          <h3>The Trade Mindset</h3>
-
-          <p>
-
-            Patience, preparation, relationships, and the
-
-            habits that support long-term business.
-
-          </p>
-
-          <span class="read">Explore this chapter ↗</span>
-
-        </button>
-
-      </div>
-
-      <article class="chapter-detail" id="chapterDetail"
-
-        aria-live="polite" aria-atomic="true">
-
-        <div class="kicker" id="detailKicker">Field note</div>
-
-        <h3 id="detailTitle">A closer look</h3>
-
-        <p id="detailText"></p>
-
-      </article>
-
-    </div>
-
-  </section>
-
-  <!-- CLOSING -->
-
-  <section id="closing" class="content-section">
-
-    <div class="wrap">
-
-      <div class="eyebrow">This is only the beginning</div>
-
-      <h2>
-
-        One foundation.<br>
-
-        A thousand lessons.<br>
-
-        <span class="gold">A journey of my own.</span>
-
-      </h2>
-
-      <p>
-
-        I'm Aryan Nanda. This is my journey into business:
-
-        learning from experience, asking better questions,
-
-        and discovering the world one lesson at a time.
-
-      </p>
-
-      <a class="btn btn-primary" href="#intro">
-
-        Return to the beginning ↑
-
-      </a>
-
-    </div>
-
-  </section>
-
-</main>
-
-<footer>
-
-  <span>ARYAN'S THEORY · BY ARYAN NANDA</span>
-
-  <span>Learn openly. Verify carefully. Think globally.</span>
-
-  <a href="#story">The story behind the journal ↗</a>
-
-</footer>
-
-<!-- FULL-SCREEN NAVIGATION -->
-
-<div id="menuPanel" role="dialog"
-
-  aria-modal="true" aria-label="Website navigation"
-
-  aria-hidden="true">
-
-  <button class="btn menu-close" id="menuClose">
-
-    Close ✕
-
-  </button>
-
-  <nav class="menu-inner">
-
-    <a class="menu-link" href="#intro">The Cover</a>
-
-    <a class="menu-link" href="#story">My Story</a>
-
-    <a class="menu-link" href="#philosophy">The Philosophy</a>
-
-    <a class="menu-link" href="#journal">Open the Journal</a>
-
-  </nav>
+  </footer>
 
 </div>
 
 <script>
 
-const menuPanel = document.getElementById("menuPanel");
+(() => {
 
-const menuOpen = document.getElementById("menuOpen");
+  const cover = document.getElementById("cover");
 
-const menuClose = document.getElementById("menuClose");
+  const button = document.getElementById("openButton");
 
-let lastFocusedElement = null;
+  const site = document.getElementById("site");
 
-function openMenu() {
+  let opened = false;
 
-  lastFocusedElement = document.activeElement;
+  const observer = new IntersectionObserver((entries) => {
 
-  menuPanel.classList.add("open");
+    entries.forEach(entry => {
 
-  menuPanel.setAttribute("aria-hidden", "false");
+      if (entry.isIntersecting) {
 
-  menuOpen.setAttribute("aria-expanded", "true");
+        entry.target.classList.add("visible");
 
-  document.body.style.overflow = "hidden";
+        observer.unobserve(entry.target);
 
-  menuClose.focus();
-
-}
-
-function closeMenu() {
-
-  menuPanel.classList.remove("open");
-
-  menuPanel.setAttribute("aria-hidden", "true");
-
-  menuOpen.setAttribute("aria-expanded", "false");
-
-  document.body.style.overflow = "";
-
-  if (lastFocusedElement) lastFocusedElement.focus();
-
-}
-
-menuOpen.addEventListener("click", openMenu);
-
-menuClose.addEventListener("click", closeMenu);
-
-menuPanel.querySelectorAll("a").forEach(link => {
-
-  link.addEventListener("click", closeMenu);
-
-});
-
-menuPanel.addEventListener("click", event => {
-
-  if (event.target === menuPanel) closeMenu();
-
-});
-
-document.addEventListener("keydown", event => {
-
-  if (event.key === "Escape" && menuPanel.classList.contains("open")) {
-
-    closeMenu();
-
-  }
-
-  if (event.key === "Tab" && menuPanel.classList.contains("open")) {
-
-    const focusable = [
-
-      menuClose,
-
-      ...menuPanel.querySelectorAll("a")
-
-    ];
-
-    const first = focusable[0];
-
-    const last = focusable[focusable.length - 1];
-
-    if (event.shiftKey && document.activeElement === first) {
-
-      event.preventDefault();
-
-      last.focus();
-
-    } else if (!event.shiftKey && document.activeElement === last) {
-
-      event.preventDefault();
-
-      first.focus();
-
-    }
-
-  }
-
-});
-
-const chapterContent = {
-
-  buyers: {
-
-    title: "Finding the Buyer",
-
-    text: "A promising product is only the beginning. Research the market, understand what buyers actually need, check whether demand is real, and approach potential partners with clarity. Credibility is built through preparation, honest communication, and consistent follow-through."
-
-  },
-
-  sourcing: {
-
-    title: "The Art of Sourcing",
-
-    text: "Good sourcing is about more than the lowest quote. Compare specifications, samples, quality, production capacity, lead times, and communication. A price only becomes meaningful when you understand what you are getting in return."
-
-  },
-
-  journey: {
-
-    title: "A Product's Journey",
-
-    text: "Moving goods between countries involves packaging, transport, insurance, delivery terms, timelines, and risk. Each decision can affect the final cost. Learn the vocabulary and verify the details for the particular product and destination."
-
-  },
-
-  paperwork: {
-
-    title: "Paper That Moves Worlds",
-
-    text: "Invoices, packing lists, transport documents, certificates, and customs declarations can all matter. Requirements depend on the product and country. Use reliable official sources and qualified professionals when checking real trade requirements."
-
-  },
-
-  numbers: {
-
-    title: "The Numbers Behind It",
-
-    text: "A selling price is not the full picture. Freight, insurance, duties, taxes, handling, financing, currency movements, and delays can affect the result. Understanding total landed cost helps you judge an opportunity more realistically."
-
-  },
-
-  mindset: {
-
-    title: "The Trade Mindset",
-
-    text: "International business takes preparation and patience. Ask thoughtful questions, protect confidential information, verify claims, keep accurate records, and respect commitments. Expertise develops through study, experience, and a willingness to keep learning."
-
-  }
-
-};
-
-const cards = document.querySelectorAll(".chapter-card");
-
-const detail = document.getElementById("chapterDetail");
-
-cards.forEach(card => {
-
-  card.addEventListener("click", () => {
-
-    const key = card.dataset.chapter;
-
-    const data = chapterContent[key];
-
-    const alreadyOpen = card.getAttribute("aria-expanded") === "true";
-
-    cards.forEach(item => {
-
-      item.setAttribute("aria-expanded", "false");
+      }
 
     });
 
-    if (alreadyOpen) {
+  }, { threshold: 0.12 });
 
-      detail.classList.remove("active");
+  function openJournal() {
 
-      return;
+    if (opened) return;
 
-    }
+    opened = true;
 
-    card.setAttribute("aria-expanded", "true");
+    button.disabled = true;
 
-    document.getElementById("detailKicker").textContent =
+    cover.classList.add("leaving");
 
-      card.querySelector(".chapter-number").textContent;
+    document.body.classList.add("open");
 
-    document.getElementById("detailTitle").textContent = data.title;
+    site.removeAttribute("inert");
 
-    document.getElementById("detailText").textContent = data.text;
+    window.setTimeout(() => {
 
-    detail.classList.add("active");
+      cover.remove();
 
-    requestAnimationFrame(() => {
+      document.body.classList.remove("locked");
 
-      detail.scrollIntoView({
+      document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 
-        behavior: window.matchMedia(
+    }, 1000);
 
-          "(prefers-reduced-motion: reduce)"
+  }
 
-        ).matches ? "auto" : "smooth",
+  button.addEventListener("click", (event) => {
 
-        block: "nearest"
+    event.stopPropagation();
 
-      });
-
-    });
+    openJournal();
 
   });
 
-});
+  cover.addEventListener("click", openJournal);
+
+})();
 
 </script>
 
