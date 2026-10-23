@@ -1,1011 +1,1098 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>NANDERA — FIND YOURSELF.</title>
-
-    <meta name="description"
-          content="NANDERA — A new expression of modern luxury skincare. Coming soon.">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: #f5f1e9;
-            color: #181612;
-            font-family: "Inter", sans-serif;
-            font-weight: 300;
-            overflow-x: hidden;
-        }
-
-        /* =========================
-           GLOBAL
-        ========================= */
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        button,
-        input {
-            font-family: inherit;
-        }
-
-        .serif {
-            font-family: "Cormorant Garamond", serif;
-        }
-
-        .container {
-            width: min(1180px, 90%);
-            margin: auto;
-        }
-
-        .eyebrow {
-            font-size: 10px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: #716b60;
-        }
-
-        /* =========================
-           HEADER
-        ========================= */
-
-        header {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 20;
-            padding: 28px 0;
-        }
-
-        .nav {
-            width: min(1300px, 92%);
-            margin: auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            font-family: "Cormorant Garamond", serif;
-            font-size: 31px;
-            font-weight: 600;
-            letter-spacing: 7px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 38px;
-            align-items: center;
-            font-size: 11px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .nav-links a {
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -7px;
-            width: 0;
-            height: 1px;
-            background: #181612;
-            transition: width .3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .nav-cta {
-            border: 1px solid #181612;
-            padding: 11px 18px;
-            transition: .3s ease;
-        }
-
-        .nav-cta:hover {
-            background: #181612;
-            color: #f5f1e9;
-        }
-
-        /* =========================
-           HERO
-        ========================= */
-
-        .hero {
-            min-height: 100vh;
-            position: relative;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            background: #e8dfd0;
-            right: -180px;
-            top: 90px;
-            filter: blur(2px);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            padding-top: 70px;
-        }
-
-        .hero-small {
-            margin-bottom: 24px;
-        }
-
-        .hero h1 {
-            font-family: "Cormorant Garamond", serif;
-            font-size: clamp(75px, 13vw, 175px);
-            line-height: .75;
-            font-weight: 500;
-            letter-spacing: -4px;
-            max-width: 900px;
-        }
-
-        .hero-tagline {
-            margin-top: 38px;
-            font-family: "Cormorant Garamond", serif;
-            font-size: clamp(25px, 3vw, 42px);
-            font-style: italic;
-            letter-spacing: 1px;
-        }
-
-        .hero-description {
-            max-width: 430px;
-            margin-top: 25px;
-            line-height: 1.8;
-            font-size: 13px;
-            color: #625c52;
-        }
-
-        .hero-actions {
-            margin-top: 38px;
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .primary-btn {
-            display: inline-block;
-            background: #181612;
-            color: #f5f1e9;
-            padding: 16px 27px;
-            font-size: 10px;
-            letter-spacing: 2.5px;
-            text-transform: uppercase;
-            transition: .3s ease;
-        }
-
-        .primary-btn:hover {
-            transform: translateY(-2px);
-            background: #302b24;
-        }
-
-        .secondary-btn {
-            display: inline-block;
-            border: 1px solid #8b8478;
-            padding: 15px 27px;
-            font-size: 10px;
-            letter-spacing: 2.5px;
-            text-transform: uppercase;
-            transition: .3s ease;
-        }
-
-        .secondary-btn:hover {
-            background: #e8dfd0;
-        }
-
-        .hero-number {
-            position: absolute;
-            right: 7%;
-            bottom: 45px;
-            font-family: "Cormorant Garamond", serif;
-            font-size: 17px;
-            letter-spacing: 3px;
-            writing-mode: vertical-rl;
-            color: #716b60;
-        }
-
-        /* =========================
-           INTRO
-        ========================= */
-
-        .intro {
-            padding: 150px 0;
-            background: #181612;
-            color: #f5f1e9;
-        }
-
-        .intro-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 100px;
-            align-items: center;
-        }
-
-        .intro-title {
-            font-family: "Cormorant Garamond", serif;
-            font-size: clamp(48px, 6vw, 82px);
-            line-height: .95;
-            font-weight: 400;
-        }
-
-        .intro-text {
-            max-width: 450px;
-            line-height: 2;
-            font-size: 14px;
-            color: #c9c1b4;
-        }
-
-        .intro-text p + p {
-            margin-top: 25px;
-        }
-
-        /* =========================
-           COMING SOON
-        ========================= */
-
-        .coming {
-            padding: 150px 0;
-        }
-
-        .coming-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: end;
-            margin-bottom: 65px;
-        }
-
-        .coming-title {
-            font-family: "Cormorant Garamond", serif;
-            font-size: clamp(55px, 7vw, 95px);
-            line-height: .9;
-            font-weight: 400;
-        }
-
-        .coming-note {
-            max-width: 260px;
-            font-size: 12px;
-            line-height: 1.8;
-            color: #756e63;
-        }
-
-        .product-preview {
-            min-height: 560px;
-            background: #e9e0d1;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .product-preview::before {
-            content: "";
-            position: absolute;
-            width: 480px;
-            height: 480px;
-            border-radius: 50%;
-            background: #ddd1bd;
-        }
-
-        /* CSS-only luxury bottle */
-
-        .bottle {
-            position: relative;
-            z-index: 2;
-            width: 135px;
-            height: 310px;
-            border-radius: 16px 16px 25px 25px;
-            background: linear-gradient(
-                90deg,
-                #d4c8b4,
-                #f4eee4,
-                #cfc1aa
-            );
-            box-shadow:
-                25px 30px 50px rgba(44, 35, 24, .16),
-                inset 10px 0 20px rgba(255,255,255,.25);
-        }
-
-        .bottle-cap {
-            position: absolute;
-            top: -58px;
-            left: 31px;
-            width: 73px;
-            height: 65px;
-            border-radius: 7px 7px 3px 3px;
-            background: linear-gradient(
-                90deg,
-                #171512,
-                #38322a,
-                #12110f
-            );
-        }
-
-        .bottle-label {
-            position: absolute;
-            width: 90px;
-            height: 130px;
-            left: 22px;
-            top: 90px;
-            background: #eee7dc;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            flex-direction: column;
-        }
-
-        .bottle-label strong {
-            font-family: "Cormorant Garamond", serif;
-            font-size: 17px;
-            letter-spacing: 3px;
-        }
-
-        .bottle-label span {
-            margin-top: 10px;
-            font-size: 6px;
-            letter-spacing: 2px;
-            color: #746d62;
-        }
-
-        .preview-caption {
-            position: absolute;
-            bottom: 28px;
-            left: 30px;
-            font-size: 9px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #70685c;
-        }
-
-        /* =========================
-           PHILOSOPHY
-        ========================= */
-
-        .philosophy {
-            padding: 140px 0;
-            border-top: 1px solid #d7d0c4;
-        }
-
-        .philosophy-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 50px;
-            margin-top: 65px;
-        }
-
-        .philosophy-card {
-            padding-top: 25px;
-            border-top: 1px solid #9f978a;
-        }
-
-        .philosophy-card span {
-            font-family: "Cormorant Garamond", serif;
-            font-size: 18px;
-            color: #8a8174;
-        }
-
-        .philosophy-card h3 {
-            font-family: "Cormorant Garamond", serif;
-            font-size: 31px;
-            font-weight: 500;
-            margin: 20px 0;
-        }
-
-        .philosophy-card p {
-            font-size: 12px;
-            line-height: 1.9;
-            color: #716a5f;
-        }
-
-        /* =========================
-           NOTIFY
-        ========================= */
-
-        .notify {
-            background: #ded3c2;
-            padding: 130px 0;
-            text-align: center;
-        }
-
-        .notify h2 {
-            font-family: "Cormorant Garamond", serif;
-            font-size: clamp(55px, 7vw, 100px);
-            font-weight: 400;
-            line-height: .9;
-        }
-
-        .notify p {
-            max-width: 460px;
-            margin: 28px auto;
-            font-size: 13px;
-            line-height: 1.8;
-            color: #615a50;
-        }
-
-        .notify-button {
-            display: inline-block;
-            margin-top: 15px;
-            background: #181612;
-            color: #fff;
-            padding: 17px 32px;
-            font-size: 10px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            transition: .3s ease;
-        }
-
-        .notify-button:hover {
-            background: #302b24;
-        }
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            background: #181612;
-            color: #f5f1e9;
-            padding: 75px 0 30px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr;
-            gap: 70px;
-            padding-bottom: 70px;
-        }
-
-        .footer-logo {
-            font-family: "Cormorant Garamond", serif;
-            font-size: 39px;
-            letter-spacing: 7px;
-        }
-
-        .footer-tagline {
-            margin-top: 13px;
-            color: #aaa195;
-            font-family: "Cormorant Garamond", serif;
-            font-size: 20px;
-            font-style: italic;
-        }
-
-        .footer-heading {
-            font-size: 9px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #827a6e;
-            margin-bottom: 20px;
-        }
-
-        .footer-links {
-            display: flex;
-            flex-direction: column;
-            gap: 13px;
-            font-size: 12px;
-        }
-
-        .footer-links a:hover {
-            color: #c9bda9;
-        }
-
-        .copyright {
-            border-top: 1px solid #38342e;
-            padding-top: 25px;
-            font-size: 9px;
-            letter-spacing: 1.5px;
-            color: #777066;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 800px) {
-
-            header {
-                padding: 22px 0;
-            }
-
-            .nav-links {
-                gap: 15px;
-            }
-
-            .nav-links a:not(.nav-cta) {
-                display: none;
-            }
-
-            .logo {
-                font-size: 27px;
-            }
-
-            .hero {
-                min-height: 850px;
-            }
-
-            .hero h1 {
-                font-size: 90px;
-                letter-spacing: -2px;
-            }
-
-            .hero::before {
-                width: 350px;
-                height: 350px;
-                right: -160px;
-                top: 270px;
-            }
-
-            .hero-number {
-                display: none;
-            }
-
-            .intro-grid {
-                grid-template-columns: 1fr;
-                gap: 45px;
-            }
-
-            .coming-header {
-                display: block;
-            }
-
-            .coming-note {
-                margin-top: 25px;
-            }
-
-            .product-preview {
-                min-height: 470px;
-            }
-
-            .philosophy-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 45px;
-            }
-
-            .copyright {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
-
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08111f">
+  <meta name="description" content="Aryan Nanda — making global trade simple. Explore import-export, international business, sourcing, logistics, and global markets.">
+  <title>ARYAN NANDA | Let's Decode Global Trade</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #08111f;
+      --panel: #101c2c;
+      --text: #f4f7fb;
+      --muted: #9aa9bd;
+      --gold: #d8b36a;
+      --gold-light: #f0d49a;
+      --line: rgba(255,255,255,.12);
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse at 80% 5%, rgba(216,179,106,.12), transparent 35%),
+        radial-gradient(ellipse at 10% 40%, rgba(43,99,150,.12), transparent 40%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    h1, h2, h3 {
+      font-family: "Manrope", sans-serif;
+      letter-spacing: -.04em;
+      line-height: 1.15;
+    }
+
+    h2 { font-size: clamp(32px, 4vw, 48px); }
+    p { color: var(--muted); }
+
+    .container {
+      width: min(var(--max), calc(100% - 48px));
+      margin: auto;
+    }
+
+    .gold { color: var(--gold-light); }
+
+    .eyebrow {
+      color: var(--gold-light);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+    }
+
+    /* NAVIGATION */
+
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8,17,31,.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-family: "Manrope", sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      white-space: nowrap;
+    }
+
+    .brand span { color: var(--gold-light); }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 13px;
+      color: #c1cada;
+    }
+
+    .nav-links a:hover { color: var(--gold-light); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 20px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: .25s;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--gold-light);
+      color: #101722;
+      border: 1px solid var(--gold-light);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--line);
+      color: var(--text);
+    }
+
+    .btn:hover { transform: translateY(-3px); }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      color: white;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-size: 18px;
+    }
+
+    /* HERO */
+
+    .hero { padding: 95px 0 80px; }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 6.5vw, 82px);
+      margin: 22px 0;
+      letter-spacing: -.065em;
+    }
+
+    .hero h1 span {
+      display: block;
+      color: var(--gold-light);
+    }
+
+    .hero-copy {
+      max-width: 590px;
+      font-size: 17px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 30px 0;
+    }
+
+    .hero-note {
+      font-size: 12px;
+      color: #aeb9c8;
+    }
+
+    .hero-note span { color: var(--gold-light); }
+
+    /* ABSTRACT GLOBAL TRADE VISUAL */
+
+    .visual {
+      min-height: 460px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(145deg, #122238, #091321);
+      background-size: 35px 35px, 35px 35px, auto;
+    }
+
+    .orbit {
+      position: absolute;
+      width: 330px;
+      height: 330px;
+      border: 1px solid rgba(216,179,106,.28);
+      border-radius: 50%;
+      top: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .orbit.two {
+      width: 240px;
+      height: 240px;
+      top: 105px;
+    }
+
+    .globe {
+      position: absolute;
+      top: 145px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 1px solid var(--gold);
+      background: radial-gradient(circle at 30% 25%, #405d78, #12253a 70%);
+      box-shadow: 0 0 60px rgba(216,179,106,.15);
+    }
+
+    .globe::before,
+    .globe::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(240,212,154,.35);
+      border-radius: 50%;
+    }
+
+    .globe::before { left: 25%; right: 25%; }
+    .globe::after { top: 25%; bottom: 25%; }
+
+    .route {
+      position: absolute;
+      width: 75%;
+      height: 110px;
+      left: 12%;
+      top: 185px;
+      border-top: 1px dashed var(--gold);
+      border-radius: 50%;
+      transform: rotate(-22deg);
+    }
+
+    .floating-card {
+      position: absolute;
+      background: rgba(8,17,31,.94);
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      padding: 13px 16px;
+      font-size: 12px;
+      box-shadow: 0 15px 35px rgba(0,0,0,.2);
+    }
+
+    .floating-card small {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .card-one { top: 48px; left: 18px; }
+    .card-two { right: 15px; top: 260px; }
+    .card-three { bottom: 30px; left: 25px; }
+
+    .visual-caption {
+      position: absolute;
+      bottom: 17px;
+      right: 18px;
+      font-size: 9px;
+      letter-spacing: .15em;
+      color: #8190a4;
+      text-transform: uppercase;
+    }
+
+    /* KEYWORDS STRIP */
+
+    .ticker {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.02);
+    }
+
+    .ticker-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 20px 0;
+      font-size: 10px;
+      letter-spacing: .14em;
+      color: #a0aec0;
+      text-transform: uppercase;
+    }
+
+    .ticker-row span::before {
+      content: "✦";
+      color: var(--gold);
+      margin-right: 9px;
+    }
+
+    /* GENERAL SECTIONS */
+
+    .section { padding: 95px 0; }
+
+    .section-head {
+      max-width: 700px;
+      margin-bottom: 40px;
+    }
+
+    .section-head h2 { margin: 15px 0; }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .about-panel {
+      min-height: 290px;
+      padding: 30px;
+      border: 1px solid rgba(216,179,106,.35);
+      border-radius: 24px;
+      background: linear-gradient(145deg, rgba(216,179,106,.09), rgba(255,255,255,.015));
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .monogram {
+      font-family: "Manrope", sans-serif;
+      font-size: 85px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -.1em;
+      color: var(--gold-light);
+    }
+
+    .about-label {
+      color: #aeb9c8;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+    }
+
+    .quote {
+      border-left: 2px solid var(--gold);
+      padding-left: 20px;
+      margin: 25px 0;
+      font-family: "Manrope", sans-serif;
+      font-size: 19px;
+      line-height: 1.6;
+      color: #e8edf4;
+    }
+
+    /* TOPIC CARDS */
+
+    .topics-section {
+      background: rgba(255,255,255,.018);
+      border-top: 1px solid rgba(255,255,255,.05);
+      border-bottom: 1px solid rgba(255,255,255,.05);
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 17px;
+    }
+
+    .topic-card {
+      padding: 27px;
+      min-height: 235px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255,255,255,.035);
+      transition: .25s;
+    }
+
+    .topic-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(216,179,106,.5);
+      background: rgba(255,255,255,.065);
+    }
+
+    .topic-number {
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: .13em;
+    }
+
+    .topic-icon {
+      font-size: 27px;
+      margin: 22px 0 12px;
+      color: var(--gold-light);
+    }
+
+    .topic-card h3 {
+      font-size: 20px;
+      margin: 0 0 10px;
+    }
+
+    .topic-card p {
+      font-size: 13px;
+      margin-bottom: 0;
+    }
+
+    /* APPROACH */
+
+    .feature-band {
+      border: 1px solid rgba(216,179,106,.3);
+      border-radius: 26px;
+      background: linear-gradient(120deg, rgba(216,179,106,.10), rgba(255,255,255,.02));
+      padding: 45px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr .85fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .feature-item {
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(8,17,31,.45);
+      font-size: 13px;
+    }
+
+    .check {
+      color: var(--gold-light);
+      margin-right: 10px;
+    }
+
+    /* ROADMAP */
+
+    .roadmap {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .step {
+      padding: 24px;
+      background: rgba(255,255,255,.025);
+      border-right: 1px solid var(--line);
+    }
+
+    .step:last-child { border-right: none; }
+
+    .step-num {
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: .15em;
+    }
+
+    .step h3 {
+      font-size: 17px;
+      margin: 18px 0 10px;
+    }
+
+    .step p { font-size: 12px; margin-bottom: 0; }
+
+    /* CONTACT */
+
+    .cta { padding: 0 0 100px; }
+
+    .cta-box {
+      padding: 60px 25px;
+      text-align: center;
+      border: 1px solid rgba(216,179,106,.35);
+      border-radius: 27px;
+      background: radial-gradient(ellipse at center top, rgba(216,179,106,.13), transparent 65%);
+    }
+
+    .cta-box h2 {
+      max-width: 750px;
+      margin: 20px auto;
+    }
+
+    .cta-box p {
+      max-width: 580px;
+      margin: 0 auto 28px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #b5c0cf;
+      font-size: 12px;
+    }
+
+    .social-links a:hover {
+      color: var(--gold-light);
+      border-color: var(--gold);
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 25px 0;
+      color: #8190a4;
+      font-size: 11px;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .footer-brand {
+      color: #e5eaf1;
+      letter-spacing: .13em;
+      font-weight: 700;
+    }
+
+    /* ANIMATIONS */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; }
+      * { transition: none !important; }
+    }
+
+    /* TABLET */
+
+    @media (max-width: 900px) {
+      .hero-grid, .about-grid, .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .cards-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .roadmap { grid-template-columns: repeat(2, 1fr); }
+
+      .step:nth-child(2) { border-right: none; }
+
+      .step:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 650px) {
+      .container { width: calc(100% - 32px); }
+
+      nav { min-height: 68px; }
+
+      .menu-toggle { display: block; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        padding: 15px 24px 22px;
+        flex-direction: column;
+        gap: 0;
+        background: #08111f;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav-links.open { display: flex; }
+
+      .nav-links a { padding: 12px 0; }
+
+      .nav-cta { display: none; }
+
+      .hero { padding: 65px 0 55px; }
+
+      .hero h1 { font-size: clamp(46px, 13vw, 65px); }
+
+      .hero-copy { font-size: 15px; }
+
+      .visual { min-height: 390px; }
+
+      .orbit {
+        width: 270px;
+        height: 270px;
+        top: 55px;
+      }
+
+      .orbit.two {
+        width: 200px;
+        height: 200px;
+        top: 90px;
+      }
+
+      .globe {
+        width: 135px;
+        height: 135px;
+        top: 123px;
+      }
+
+      .route { top: 160px; }
+
+      .floating-card {
+        padding: 10px 12px;
+        font-size: 10px;
+      }
+
+      .card-one { top: 35px; left: 10px; }
+      .card-two { right: 8px; top: 255px; }
+      .card-three { left: 12px; bottom: 20px; }
+
+      .section { padding: 70px 0; }
+
+      .ticker-row { justify-content: flex-start; }
+
+      .ticker-row span { font-size: 9px; }
+
+      .cards-grid, .roadmap { grid-template-columns: 1fr; }
+
+      .topic-card { min-height: 200px; }
+
+      .step, .step:nth-child(2) {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .step:last-child { border-bottom: none; }
+
+      .feature-band { padding: 25px; }
+
+      .cta { padding-bottom: 70px; }
+
+      .cta-box { padding: 42px 20px; }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- =========================
-     HEADER
-========================= -->
+  <!-- NAVIGATION -->
+  <div class="nav-wrap">
+    <nav class="container">
+      <a class="brand" href="#home">AN<span>.</span> ARYAN NANDA</a>
 
-<header>
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
 
-    <nav class="nav">
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#explore">Explore EXIM</a>
+        <a href="#approach">My Approach</a>
+        <a href="#roadmap">Start Here</a>
+      </div>
 
-        <a href="index.html" class="logo">
-            NANDERA
-        </a>
-
-        <div class="nav-links">
-
-            <a href="#story">
-                The House
-            </a>
-
-            <a href="#coming">
-                Coming Soon
-            </a>
-
-            <a href="contact.html">
-                Contact
-            </a>
-
-            <a href="#notify" class="nav-cta">
-                Stay Close
-            </a>
-
-        </div>
-
+      <a class="btn btn-primary nav-cta" href="#connect">Explore Global Trade ↗</a>
     </nav>
+  </div>
 
-</header>
+  <main>
 
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
 
-<!-- =========================
-     HERO
-========================= -->
+        <div class="reveal">
+          <div class="eyebrow">International Business · Made Clear</div>
 
-<section class="hero">
+          <h1>
+            Think Beyond
+            <span>Boundaries.</span>
+          </h1>
 
-    <div class="container">
+          <p class="hero-copy">
+            The world trades more than products. It trades ideas, opportunities,
+            and ambition. Discover the business behind borders with practical,
+            beginner-friendly insights into import-export and global trade.
+          </p>
 
-        <div class="hero-content">
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#explore">Explore the World of EXIM ↗</a>
+            <a class="btn btn-secondary" href="#about">Meet Aryan ↓</a>
+          </div>
 
-            <div class="eyebrow hero-small">
-                A New Beauty House
-            </div>
+          <div class="hero-note">
+            <span>✦</span> Clear explanations. Practical knowledge. No overnight-success promises.
+          </div>
+        </div>
 
-            <h1>
-                NANDERA
-            </h1>
+        <div class="visual reveal" aria-label="Abstract illustration of global trade">
+          <div class="orbit"></div>
+          <div class="orbit two"></div>
+          <div class="globe"></div>
+          <div class="route"></div>
 
-            <div class="hero-tagline">
-                FIND YOURSELF.
-            </div>
+          <div class="floating-card card-one">
+            ↗ <strong> Global Markets</strong>
+            <small>Connecting opportunities</small>
+          </div>
 
-            <p class="hero-description">
-                A modern beauty house in the making —
-                created around refined essentials,
-                considered details and a quieter idea of luxury.
+          <div class="floating-card card-two">
+            ⇄ <strong> Trade in Motion</strong>
+            <small>From source to destination</small>
+          </div>
+
+          <div class="floating-card card-three">
+            ⌘ <strong> Business Insights</strong>
+            <small>Understand the process</small>
+          </div>
+
+          <div class="visual-caption">A world connected by trade</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- KEYWORDS -->
+    <div class="ticker">
+      <div class="container ticker-row">
+        <span>Import & Export</span>
+        <span>Global Sourcing</span>
+        <span>Shipping & Logistics</span>
+        <span>International Business</span>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+
+        <div class="about-panel reveal">
+          <div class="eyebrow">The Person Behind the Platform</div>
+          <div class="monogram">AN<span>.</span></div>
+          <div class="about-label">
+            Curiosity across borders.<br>
+            Knowledge without complexity.
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="eyebrow">A Little About Me</div>
+
+          <h2>
+            I'm Aryan Nanda.<br>
+            <span class="gold">Let's make trade make sense.</span>
+          </h2>
+
+          <p>
+            My interest in international business grew through my exposure
+            to the import-export industry and my father's experience in the field.
+            I started this platform to make the concepts behind global trade
+            easier to understand—one idea at a time.
+          </p>
+
+          <p>
+            From how buyers and suppliers connect to the details behind shipping,
+            documentation, and commercial decisions, the aim is to explain
+            the process clearly and practically.
+          </p>
+
+          <div class="quote">
+            "You don't need to know everything about global trade to begin
+            learning. You just need to start asking the right questions."
+          </div>
+
+          <p>
+            Educational content, grounded in practical questions and a respect
+            for the complexity of real-world business.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EXPLORE EXIM -->
+    <section class="section topics-section" id="explore">
+      <div class="container">
+
+        <div class="section-head reveal">
+          <div class="eyebrow">Explore the Essentials</div>
+
+          <h2>
+            Understand the business<br>
+            behind <span class="gold">every border.</span>
+          </h2>
+
+          <p>
+            International trade can feel complicated from the outside.
+            Start with the fundamentals, then connect the dots between
+            each part of the process.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+
+          <article class="topic-card reveal">
+            <div class="topic-number">01 / THE PEOPLE</div>
+            <div class="topic-icon">⌕</div>
+            <h3>Buyers & Suppliers</h3>
+            <p>
+              Explore how businesses identify potential partners, assess
+              credibility, and build relationships across markets.
             </p>
+          </article>
 
-            <div class="hero-actions">
-
-                <a href="#coming" class="primary-btn">
-                    Discover What's Coming
-                </a>
-
-                <a href="#story" class="secondary-btn">
-                    Our Philosophy
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="hero-number">
-        N / 01
-    </div>
-
-</section>
-
-
-<!-- =========================
-     THE HOUSE
-========================= -->
-
-<section class="intro" id="story">
-
-    <div class="container">
-
-        <div class="intro-grid">
-
-            <div>
-
-                <div class="eyebrow" style="color:#968d80;">
-                    The House
-                </div>
-
-                <h2 class="intro-title">
-                    Beauty,<br>
-                    stripped<br>
-                    back.
-                </h2>
-
-            </div>
-
-            <div class="intro-text">
-
-                <p>
-                    NANDERA is being created as a modern luxury
-                    beauty brand — where every detail is intentional,
-                    from the product itself to the way it lives on
-                    your shelf.
-                </p>
-
-                <p>
-                    We believe beauty does not need to be loud
-                    to be noticed. It can be personal,
-                    refined and unmistakably yours.
-                </p>
-
-                <p>
-                    Our first collection is currently in development.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     COMING SOON
-========================= -->
-
-<section class="coming" id="coming">
-
-    <div class="container">
-
-        <div class="coming-header">
-
-            <div>
-
-                <div class="eyebrow">
-                    The First Chapter
-                </div>
-
-                <h2 class="coming-title">
-                    Coming<br>
-                    Soon.
-                </h2>
-
-            </div>
-
-            <p class="coming-note">
-                Our first skincare collection is
-                currently being developed.
-                Details will be revealed when
-                everything is ready.
+          <article class="topic-card reveal">
+            <div class="topic-number">02 / THE PRODUCT</div>
+            <div class="topic-icon">◇</div>
+            <h3>Sourcing & Products</h3>
+            <p>
+              Understand product selection, supplier conversations, quality
+              expectations, and the questions to ask before a deal.
             </p>
+          </article>
+
+          <article class="topic-card reveal">
+            <div class="topic-number">03 / THE JOURNEY</div>
+            <div class="topic-icon">⇢</div>
+            <h3>Shipping & Logistics</h3>
+            <p>
+              Learn the roles of freight, transport, delivery planning,
+              and the moving parts that connect countries.
+            </p>
+          </article>
+
+          <article class="topic-card reveal">
+            <div class="topic-number">04 / THE PAPERWORK</div>
+            <div class="topic-icon">▤</div>
+            <h3>Trade Documentation</h3>
+            <p>
+              Get familiar with common documents and why accuracy,
+              product details, and destination rules matter.
+            </p>
+          </article>
+
+          <article class="topic-card reveal">
+            <div class="topic-number">05 / THE NUMBERS</div>
+            <div class="topic-icon">₹</div>
+            <h3>Pricing & Payments</h3>
+            <p>
+              Discover the factors behind export pricing, payment terms,
+              costs, margins, and commercial risk.
+            </p>
+          </article>
+
+          <article class="topic-card reveal">
+            <div class="topic-number">06 / THE BIG PICTURE</div>
+            <div class="topic-icon">◎</div>
+            <h3>Global Markets</h3>
+            <p>
+              See how countries, regulations, demand, and market research
+              influence international business decisions.
+            </p>
+          </article>
 
         </div>
+      </div>
+    </section>
 
+    <!-- APPROACH -->
+    <section class="section" id="approach">
+      <div class="container">
 
-        <div class="product-preview">
-
-            <div class="bottle">
-
-                <div class="bottle-cap"></div>
-
-                <div class="bottle-label">
-
-                    <strong>
-                        NANDERA
-                    </strong>
-
-                    <span>
-                        SKINCARE
-                    </span>
-
-                </div>
-
-            </div>
-
-            <div class="preview-caption">
-                First Collection · 01
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     PHILOSOPHY
-========================= -->
-
-<section class="philosophy">
-
-    <div class="container">
-
-        <div class="eyebrow">
-            What We Believe
-        </div>
-
-        <div class="philosophy-grid">
-
-            <div class="philosophy-card">
-
-                <span>01</span>
-
-                <h3>
-                    Less, but better.
-                </h3>
-
-                <p>
-                    A focused collection instead of an endless
-                    catalogue. Every product should have a reason
-                    to exist.
-                </p>
-
-            </div>
-
-
-            <div class="philosophy-card">
-
-                <span>02</span>
-
-                <h3>
-                    Designed to belong.
-                </h3>
-
-                <p>
-                    From the formula to the bottle, NANDERA is
-                    being designed to feel considered both in use
-                    and in your space.
-                </p>
-
-            </div>
-
-
-            <div class="philosophy-card">
-
-                <span>03</span>
-
-                <h3>
-                    Personal by nature.
-                </h3>
-
-                <p>
-                    Beauty should complement individuality —
-                    not replace it.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     NOTIFY
-========================= -->
-
-<section class="notify" id="notify">
-
-    <div class="container">
-
-        <div class="eyebrow">
-            Before The Beginning
-        </div>
-
-        <h2>
-            Be there<br>
-            from the start.
-        </h2>
-
-        <p>
-            NANDERA is not available yet.
-            If you'd like to hear when our first collection
-            is officially revealed, get in touch with us.
-        </p>
-
-        <a href="contact.html" class="notify-button">
-            Stay Connected
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-    <div class="container">
-
-        <div class="footer-grid">
+        <div class="feature-band reveal">
+          <div class="feature-grid">
 
             <div>
+              <div class="eyebrow">The Approach</div>
 
-                <div class="footer-logo">
-                    NANDERA
-                </div>
+              <h2>
+                Less jargon.<br>
+                <span class="gold">More understanding.</span>
+              </h2>
 
-                <div class="footer-tagline">
-                    FIND YOURSELF.
-                </div>
+              <p>
+                Global trade is a real business with real responsibilities.
+                This platform focuses on helping you understand the process—not
+                selling shortcuts or promising guaranteed results.
+              </p>
 
+              <a class="btn btn-secondary" href="#roadmap">
+                See the Learning Path ↗
+              </a>
             </div>
 
-
-            <div>
-
-                <div class="footer-heading">
-                    Explore
-                </div>
-
-                <div class="footer-links">
-
-                    <a href="#story">
-                        The House
-                    </a>
-
-                    <a href="#coming">
-                        Coming Soon
-                    </a>
-
-                    <a href="contact.html">
-                        Contact
-                    </a>
-
-                </div>
-
+            <div class="feature-list">
+              <div class="feature-item"><span class="check">✓</span> Concepts explained in simple language</div>
+              <div class="feature-item"><span class="check">✓</span> Practical examples and process breakdowns</div>
+              <div class="feature-item"><span class="check">✓</span> Clear distinctions between facts and assumptions</div>
+              <div class="feature-item"><span class="check">✓</span> Respect for compliance, risk, and real business constraints</div>
+              <div class="feature-item"><span class="check">✓</span> No fake guarantees or overnight-success claims</div>
             </div>
 
-
-            <div>
-
-                <div class="footer-heading">
-                    Status
-                </div>
-
-                <div class="footer-links">
-
-                    <span>
-                        Pre-Launch
-                    </span>
-
-                    <span>
-                        First Collection — Coming Soon
-                    </span>
-
-                </div>
-
-            </div>
-
+          </div>
         </div>
 
+      </div>
+    </section>
 
-        <div class="copyright">
+    <!-- LEARNING ROADMAP -->
+    <section class="section" id="roadmap">
+      <div class="container">
 
-            <span>
-                © 2026 NANDERA. ALL RIGHTS RESERVED.
-            </span>
+        <div class="section-head reveal">
+          <div class="eyebrow">Start Here</div>
 
-            <span>
-                FIND YOURSELF.
-            </span>
+          <h2>
+            Your first steps into<br>
+            <span class="gold">global trade.</span>
+          </h2>
 
+          <p>
+            Build understanding in a sensible order. Each step gives you
+            a foundation for the next.
+          </p>
         </div>
 
+        <div class="roadmap">
+
+          <div class="step reveal">
+            <div class="step-num">STEP 01</div>
+            <h3>Learn the Language</h3>
+            <p>
+              Get familiar with import, export, buyers, suppliers,
+              Incoterms, and the key players.
+            </p>
+          </div>
+
+          <div class="step reveal">
+            <div class="step-num">STEP 02</div>
+            <h3>Understand the Flow</h3>
+            <p>
+              Follow a transaction from initial enquiry and quotation
+              through fulfilment and delivery.
+            </p>
+          </div>
+
+          <div class="step reveal">
+            <div class="step-num">STEP 03</div>
+            <h3>Research Carefully</h3>
+            <p>
+              Investigate product demand, destination rules, costs,
+              logistics, and business risks.
+            </p>
+          </div>
+
+          <div class="step reveal">
+            <div class="step-num">STEP 04</div>
+            <h3>Keep Learning</h3>
+            <p>
+              Use reliable sources and qualified professionals when
+              making actual commercial decisions.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="cta" id="connect">
+      <div class="container">
+
+        <div class="cta-box reveal">
+          <div class="eyebrow">The Journey Starts Here</div>
+
+          <h2>
+            The world is connected.<br>
+            <span class="gold">Understand what moves it.</span>
+          </h2>
+
+          <p>
+            Follow along as we break down import-export and international
+            business into ideas you can understand, question, and build on.
+          </p>
+
+          <!-- Replace this with your actual YouTube channel URL. -->
+          <a class="btn btn-primary"
+             href="https://www.youtube.com/"
+             target="_blank"
+             rel="noopener noreferrer">
+            Explore Video Content ↗
+          </a>
+
+          <div class="social-links">
+            <!-- Replace these links with your actual profiles. -->
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-row">
+      <div class="footer-brand">ARYAN NANDA</div>
+      <div>Let's decode global trade.</div>
+      <div>© <span id="year"></span> Aryan Nanda. All rights reserved.</div>
     </div>
+  </footer>
 
-</footer>
+  <script>
+    // Mobile navigation menu
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
 
+    menuToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    // Close the mobile menu after a navigation link is selected
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    // Animate sections as they enter the screen
+    const revealItems = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealItems.forEach(function (item) {
+        observer.observe(item);
+      });
+    } else {
+      revealItems.forEach(function (item) {
+        item.classList.add("visible");
+      });
+    }
+
+    // Automatically update the copyright year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
